@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Forestry Futures - Shape the Future of Our Forests</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                primary: "#005f73",
+                secondary: "#94d2bd",
+                accent: "#e9d8a6",
+                "text-dark": "#212529",
+                "background-light": "#FFFFFF",
+                "background-dark": "#101c22",
+              },
+              fontFamily: {
+                display: ["Space Grotesk", "sans-serif"]
+              },
+              borderRadius: {
+                "DEFAULT": "0.5rem",
+                "lg": "1rem",
+                "xl": "1.5rem",
+                "full": "9999px"
+              },
+              keyframes: {
+                'fade-in-up': {
+                    '0%': { opacity: '0', transform: 'translateY(20px)' },
+                    '100%': { opacity: '1', transform: 'translateY(0)' },
+                },
+              },
+              animation: {
+                'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
+              },
+            },
+          },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .carousel-item {
+            scroll-snap-align: start;
+            flex: 0 0 100%;
+        }
+        .carousel-container {
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .timeline-item {
+            opacity: 0;
+        }
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .group:hover .timeline-icon-bg {
+            transform: scale(1.1);
+            box-shadow: 0 0 0 4px rgba(148, 210, 189, 0.4);
+        }
+        .group:hover .timeline-content {
+            transform: translateY(-4px);
+        }
+    </style>
+  </head>
+
+  <body class="bg-background-light dark:bg-background-dark font-display text-text-dark dark:text-gray-200">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header -->
+        <header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-700 py-4">
+        <div class="flex items-center gap-4 text-text-dark dark:text-gray-100">
+        <span class="material-symbols-outlined text-primary text-3xl">forest</span>
+        <h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">Forestry Futures</h2>
+        </div>
+        <div class="hidden md:flex flex-1 justify-end items-center gap-8">
+        <nav class="flex items-center gap-9">
+        <a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-secondary transition-colors" href="#about">About</a>
+        <a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-secondary transition-colors" href="#timeline">Timeline</a>
+        <a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-secondary transition-colors" href="#events">Events</a>
+        <a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-secondary transition-colors" href="#faq">FAQ</a>
+        </nav>
+        <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+        <span class="truncate">Get Started</span>
+        </button>
+        </div>
+        <div class="md:hidden">
+        <button class="text-text-dark dark:text-gray-100">
+        <span class="material-symbols-outlined">menu</span>
+        </button>
+        </div>
+        </div>
+        </div>
+        </header>
+        <main class="flex flex-col">
+          <!-- Hero -->
+          <section class="w-full @container">
+            <div class="@[480px]:p-4 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+              <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4 text-center" data-alt="Sunlight filtering through a lush green forest canopy." style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDpKDQ3dy_0E7XThgkINi-QclHcvyqBT77OGmtQSUtKj0tWRcddcAXrTCPYTQ9rbNBnpeFM3PRzj3fi7JpBmG1IQNs-h6yTia5URBCMhfq12PIkkyUOGL-FwAeOcQTnus7z7YGDPvhRINQyZtjkit2vgd8P78DPIT6xYjXu2zce5QnNQ31J2dEY9H7y5FsCuPtG5Y-ttcV1K8MvNiWdO_rfefhW7WprETh1YxiDStlTSjJ4LXWG3Pc9hVHGj-yrwV82x2jDA0LTQpw");'>
+                <div class="flex flex-col gap-2">
+                  <h1 class="text-white text-4xl font-bold leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-bold @[480px]:leading-tight @[480px]:tracking-[-0.033em]">Shape the Future of Our Forests</h1>
+                  <h2 class="text-white text-base font-normal leading-normal @[480px]:text-lg @[480px]:font-normal @[480px]:leading-normal max-w-2xl mx-auto">Discover the world of forestry entrepreneurship and turn your passion for nature into a sustainable venture.</h2>
+                </div>
+                <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:opacity-90 transition-opacity">
+                <span class="truncate">Start Your Journey</span>
+                </button>
+              </div>
+            </div>
+          </section>
+          
+          <!-- Sobre Joven Emprendedor Forestal -->
+          <section class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20" id="about">
+            <div class="flex flex-col gap-10 @container">
+              <div class="flex flex-col gap-4 text-center">
+                <h2 class="text-text-dark dark:text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-bold @[480px]:leading-tight @[480px]:tracking-[-0.033em]">What is Forestry Entrepreneurship?</h2>
+                <p class="text-text-dark/80 dark:text-gray-300 text-base font-normal leading-normal max-w-[720px] mx-auto">It's about blending innovation, sustainability, and business to create a positive impact on our planet's most vital ecosystems.</p>
+              </div>
+
+              <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6">
+                <div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-6 flex-col items-center text-center">
+                  <div class="flex items-center justify-center size-12 rounded-full bg-secondary/30 text-primary dark:text-secondary">
+                    <span class="material-symbols-outlined text-3xl">spa</span>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h3 class="text-text-dark dark:text-white text-lg font-bold leading-tight">Sustainability</h3>
+                    <p class="text-text-dark/70 dark:text-gray-400 text-sm font-normal leading-normal">Build businesses that protect and enhance forest ecosystems for future generations.</p>
+                  </div>
+                </div>
+
+                <div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-6 flex-col items-center text-center">
+                  <div class="flex items-center justify-center size-12 rounded-full bg-secondary/30 text-primary dark:text-secondary">
+                    <span class="material-symbols-outlined text-3xl">lightbulb</span>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <h3 class="text-text-dark dark:text-white text-lg font-bold leading-tight">Innovation</h3>
+                    <p class="text-text-dark/70 dark:text-gray-400 text-sm font-normal leading-normal">Utilize cutting-edge technology and ideas to revolutionize the forestry industry.</p>
+                  </div>
+                </div>
+
+                <div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-6 flex-col items-center text-center">
+                  <div class="flex items-center justify-center size-12 rounded-full bg-secondary/30 text-primary dark:text-secondary">
+                    <span class="material-symbols-outlined text-3xl">groups</span>
+                  </div>
+
+                  <div class="flex flex-col gap-1">
+                    <h3 class="text-text-dark dark:text-white text-lg font-bold leading-tight">Community</h3>
+                    <p class="text-text-dark/70 dark:text-gray-400 text-sm font-normal leading-normal">Connect with a network of like-minded individuals and make a collective impact.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          <!-- Línea del tiempo -->
+          <section class="w-full bg-gray-50 dark:bg-background-dark/50" id="timeline">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="text-center mb-16">
+            <h2 class="text-text-dark dark:text-white text-3xl md:text-4xl font-bold leading-tight tracking-[-0.015em]">Your Path to Success</h2>
+            <p class="text-text-dark/70 dark:text-gray-400 mt-4 max-w-2xl mx-auto">Follow these key phases to turn your green idea into a thriving forestry venture.</p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute left-1/2 -ml-0.5 w-1 h-full bg-secondary/50 dark:bg-secondary/30 rounded-full"></div>
+                <div class="space-y-12">                                                                      
+                  <div class="group relative flex items-center timeline-item animate-fade-in-up">
+                    <div class="hidden md:flex w-1/2 justify-end pr-8">
+                      <div class="bg-background-light dark:bg-background-dark/80 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 transition-transform duration-300 timeline-content">
+                        <p class="text-lg font-bold text-primary dark:text-secondary">Phase 1: Idea &amp; Research</p>
+                        <p class="mt-2 text-text-dark/70 dark:text-gray-400">Explore opportunities, identify niches, and validate your innovative ideas for the forestry sector.</p>
+                      </div>
+                    </div>
+
+                  <div class="absolute left-1/2 -translate-x-1/2 size-12 rounded-full bg-secondary flex items-center justify-center transition-transform duration-300 timeline-icon-bg"><span class="material-symbols-outlined text-primary text-3xl">search</span></div>
+                    <div class="md:hidden w-full pl-12">
+                      <div class="bg-background-light dark:bg-background-dark/80 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 transition-transform duration-300">
+                        <p class="text-lg font-bold text-primary dark:text-secondary">Phase 1: Idea &amp; Research</p>
+                        <p class="mt-2 text-text-dark/70 dark:text-gray-400">Explore opportunities, identify niches, and validate your innovative ideas for the forestry sector.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="group relative flex items-center timeline-item animate-fade-in-up">
+                    <div class="w-1/2 md:pl-8">
+                      <div class="bg-background-light dark:bg-background-dark/80 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 transition-transform duration-300 timeline-content ml-auto md:ml-0 md:w-auto w-full pl-4 md:pl-6">
+                      <p class="text-lg font-bold text-primary dark:text-secondary">Phase 2: Business Planning</p>
+                      <p class="mt-2 text-text-dark/70 dark:text-gray-400">Develop a solid business plan, outlining your mission, market strategy, and financial projections.</p>
+                    </div>
+                  </div>
+
+                  <div class="absolute left-1/2 -translate-x-1/2 size-12 rounded-full bg-secondary flex items-center justify-center transition-transform duration-300 timeline-icon-bg">
+                    <span class="material-symbols-outlined text-primary text-3xl">description</span>
+                  </div>
+
+                  <div class="hidden md:flex w-1/2"></div>
+                  </div>
+
+                  <div class="group relative flex items-center timeline-item animate-fade-in-up">
+                    <div class="hidden md:flex w-1/2 justify-end pr-8">
+                      <div class="bg-background-light dark:bg-background-dark/80 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 transition-transform duration-300 timeline-content">
+                      <p class="text-lg font-bold text-primary dark:text-secondary">Phase 3: Securing Funding</p>
+                      <p class="mt-2 text-text-dark/70 dark:text-gray-400">Pitch to investors, apply for grants, and secure the capital needed to bring your vision to life.</p>
+                      </div>
+                    </div>
+
+                    <div class="absolute left-1/2 -translate-x-1/2 size-12 rounded-full bg-secondary flex items-center justify-center transition-transform duration-300 timeline-icon-bg">
+                      <span class="material-symbols-outlined text-primary text-3xl">account_balance_wallet</span>
+                    </div>
+                    <div class="md:hidden w-full pl-12">
+                      <div class="bg-background-light dark:bg-background-dark/80 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 transition-transform duration-300">
+                        <p class="text-lg font-bold text-primary dark:text-secondary">Phase 3: Securing Funding</p>
+                        <p class="mt-2 text-text-dark/70 dark:text-gray-400">Pitch to investors, apply for grants, and secure the capital needed to bring your vision to life.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="group relative flex items-center timeline-item animate-fade-in-up">
+                  <div class="w-1/2 md:pl-8">
+                  <div class="bg-background-light dark:bg-background-dark/80 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 transition-transform duration-300 timeline-content ml-auto md:ml-0 md:w-auto w-full pl-4 md:pl-6">
+                  <p class="text-lg font-bold text-primary dark:text-secondary">Phase 4: Launch &amp; Growth</p>
+                  <p class="mt-2 text-text-dark/70 dark:text-gray-400">Launch your venture, build your team, and implement strategies for sustainable growth.</p>
+                  </div>
+                  </div>
+
+                  <div class="absolute left-1/2 -translate-x-1/2 size-12 rounded-full bg-secondary flex items-center justify-center transition-transform duration-300 timeline-icon-bg"><span class="material-symbols-outlined text-primary text-3xl">rocket_launch</span></div>
+                  <div class="hidden md:flex w-1/2"></div>
+                  </div>
+
+                  <div class="group relative flex items-center timeline-item animate-fade-in-up">
+                    <div class="hidden md:flex w-1/2 justify-end pr-8">
+                      <div class="bg-background-light dark:bg-background-dark/80 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 transition-transform duration-300 timeline-content">
+                        <p class="text-lg font-bold text-primary dark:text-secondary">Phase 5: Sustainable Impact</p>
+                        <p class="mt-2 text-text-dark/70 dark:text-gray-400">Measure your environmental and social impact, innovate, and lead the way in responsible forestry.</p>
+                      </div>
+                    </div>
+
+                    <div class="absolute left-1/2 -translate-x-1/2 size-12 rounded-full bg-secondary flex items-center justify-center transition-transform duration-300 timeline-icon-bg">
+                      <span class="material-symbols-outlined text-primary text-3xl">public</span>
+                    </div>
+
+                    <div class="md:hidden w-full pl-12">
+                      <div class="bg-background-light dark:bg-background-dark/80 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 transition-transform duration-300">
+                        <p class="text-lg font-bold text-primary dark:text-secondary">Phase 5: Sustainable Impact</p>
+                        <p class="mt-2 text-text-dark/70 dark:text-gray-400">Measure your environmental and social impact, innovate, and lead the way in responsible forestry.</p>
+                      </div>
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Documentos de Interés -->
+          <section class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
+            <div class="flex flex-col gap-4 text-center">
+              <h2 class="text-text-dark dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em]">Resources &amp; Documents</h2>
+              <p class="text-text-dark/80 dark:text-gray-300 text-base font-normal leading-normal max-w-[720px] mx-auto">Get access to essential documents to kickstart your journey. From templates to guidelines, we've got you covered.</p>
+            </div>
+
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-700 p-6 bg-background-light dark:bg-background-dark">
+                <span class="material-symbols-outlined text-secondary text-4xl">description</span>
+                <h3 class="text-text-dark dark:text-white text-lg font-bold">Business Plan Template</h3>
+                <p class="text-text-dark/70 dark:text-gray-400 text-sm flex-grow">A comprehensive template to structure your forestry venture's business plan.</p>
+                <button class="mt-4 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary/20 text-primary text-sm font-bold hover:bg-primary/30 dark:bg-secondary/20 dark:text-secondary dark:hover:bg-secondary/30 transition-colors">
+                  <span class="material-symbols-outlined">download</span>
+                  <span>Download</span>
+                </button>
+              </div>
+
+              <div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-700 p-6 bg-background-light dark:bg-background-dark">
+                <span class="material-symbols-outlined text-secondary text-4xl">query_stats</span>
+                <h3 class="text-text-dark dark:text-white text-lg font-bold">Market Research Report</h3>
+                <p class="text-text-dark/70 dark:text-gray-400 text-sm flex-grow">The latest insights and data on the forestry market trends and opportunities.</p>
+                <button class="mt-4 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary/20 text-primary text-sm font-bold hover:bg-primary/30 dark:bg-secondary/20 dark:text-secondary dark:hover:bg-secondary/30 transition-colors">
+                  <span class="material-symbols-outlined">download</span>
+                  <span>Download</span>
+                </button>
+              </div>
+              
+              <div class="flex flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-700 p-6 bg-background-light dark:bg-background-dark">
+                <span class="material-symbols-outlined text-secondary text-4xl">paid</span>
+                <h3 class="text-text-dark dark:text-white text-lg font-bold">Grant Application Guide</h3>
+                <p class="text-text-dark/70 dark:text-gray-400 text-sm flex-grow">A step-by-step guide to help you navigate the grant application process successfully.</p>
+                <button class="mt-4 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary/20 text-primary text-sm font-bold hover:bg-primary/30 dark:bg-secondary/20 dark:text-secondary dark:hover:bg-secondary/30 transition-colors">
+                  <span class="material-symbols-outlined">download</span>
+                  <span>Download</span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Eventos -->
+          <section class="w-full bg-gray-50 dark:bg-background-dark/50 py-10 md:py-20" id="events">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="flex flex-col gap-4 text-center">
+                <h2 class="text-text-dark dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em]">Community &amp; Events</h2>
+                <p class="text-text-dark/80 dark:text-gray-300 text-base font-normal leading-normal max-w-[720px] mx-auto">Join our workshops, networking events, and field trips. Connect with peers and experts in the forestry community.</p>
+              </div>
+
+              <div class="relative mt-10">
+                <div class="carousel-container flex overflow-x-auto rounded-xl">
+                  <div class="carousel-item relative">
+                    <img class="w-full h-[500px] object-cover" data-alt="A group of young people collaborating at an outdoor workshop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzF9JNixRcZFPPUVj1r9qOATm8hLHdsuWVIbSn4U58jAG7CW4PIL60nwj_Ev61yTfjR_IrykbtjAw080f7U0nCDDRVZ6tb-8B8jm-0y8w2r_dh3Ty62wT8QUP3yyWWrcnGnPapj7P_Cr97-6M2-ZXz2hvKcCQzP7CM6ugElro1lf1gwlfmLnCzCqm1NONM0L8LVcZtJC1ihYnTVi2VIBqd55wi-OtI-Ik8AvX8jyC1RcNt-Eh1NmZrMJ7jMJZP89wUF7DnWpMvyfM"/>
+                    <div class="absolute inset-0 bg-black/40"></div>
+
+                    <div class="absolute bottom-0 left-0 p-8 text-white">
+                      <h3 class="text-2xl font-bold">Innovation Workshop - May 2024</h3>
+                      <p class="mt-2">Exploring new technologies in sustainable forestry.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <button class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 dark:bg-black/50 dark:hover:bg-black/80 rounded-full size-10 flex items-center justify-center text-text-dark dark:text-white transition-colors"><span class="material-symbols-outlined">arrow_back</span></button>
+                <button class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/80 dark:bg-black/50 dark:hover:bg-black/80 rounded-full size-10 flex items-center justify-center text-text-dark dark:text-white transition-colors"><span class="material-symbols-outlined">arrow_forward</span></button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Preguntas frecuentes -->
+          <section class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20" id="faq">
+            <div class="flex flex-col gap-4 text-center">
+              <h2 class="text-text-dark dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em]">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="mt-10 space-y-4">
+              <details class="group rounded-lg bg-gray-50 dark:bg-background-dark/50 p-6 [&amp;_summary::-webkit-details-marker]:hidden" open="">
+                <summary class="flex cursor-pointer items-center justify-between gap-1.5">
+                  <h3 class="text-text-dark dark:text-white font-medium">What skills do I need to start a forestry business?</h3>
+                  <span class="relative size-5 shrink-0">
+                  <span class="material-symbols-outlined absolute inset-0 opacity-100 group-open:opacity-0 transition-opacity">add</span>
+                  <span class="material-symbols-outlined absolute inset-0 opacity-0 group-open:opacity-100 transition-opacity">remove</span>
+                  </span>
+                </summary>
+                <p class="mt-4 leading-relaxed text-text-dark/70 dark:text-gray-400">A blend of business acumen, knowledge of forestry science, and a passion for sustainability is ideal. Key skills include project management, financial planning, and an understanding of ecological principles. Our resources can help you build on your existing strengths.</p>
+              </details>
+
+              <details class="group rounded-lg bg-gray-50 dark:bg-background-dark/50 p-6 [&amp;_summary::-webkit-details-marker]:hidden">
+                <summary class="flex cursor-pointer items-center justify-between gap-1.5">
+                  <h3 class="text-text-dark dark:text-white font-medium">How do I find funding for my forestry venture?</h3>
+                  <span class="relative size-5 shrink-0">
+                  <span class="material-symbols-outlined absolute inset-0 opacity-100 group-open:opacity-0 transition-opacity">add</span>
+                  <span class="material-symbols-outlined absolute inset-0 opacity-0 group-open:opacity-100 transition-opacity">remove</span>
+                  </span>
+                </summary>
+                <p class="mt-4 leading-relaxed text-text-dark/70 dark:text-gray-400">Funding can come from various sources, including government grants for sustainable initiatives, venture capital firms focused on green tech, and angel investors passionate about conservation. Our "Grant Application Guide" is a great place to start.</p>
+              </details>
+
+              <details class="group rounded-lg bg-gray-50 dark:bg-background-dark/50 p-6 [&amp;_summary::-webkit-details-marker]:hidden">
+                <summary class="flex cursor-pointer items-center justify-between gap-1.5">
+                  <h3 class="text-text-dark dark:text-white font-medium">Is this a sustainable career path?</h3>
+                  <span class="relative size-5 shrink-0">
+                  <span class="material-symbols-outlined absolute inset-0 opacity-100 group-open:opacity-0 transition-opacity">add</span>
+                  <span class="material-symbols-outlined absolute inset-0 opacity-0 group-open:opacity-100 transition-opacity">remove</span>
+                  </span>
+                </summary>
+                <p class="mt-4 leading-relaxed text-text-dark/70 dark:text-gray-400">Absolutely. As the world shifts towards a green economy, the demand for sustainable resource management and innovative forestry solutions is growing. A career in forestry entrepreneurship is not only financially viable but also allows you to make a lasting positive impact on the planet.</p>
+              </details>
+
+            </div>
+          </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-text-dark dark:bg-black">
+          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div class="flex items-center gap-4 text-gray-300">
+                <span class="material-symbols-outlined text-secondary text-2xl">forest</span>
+                <p class="text-base font-bold">Forestry Futures</p>
+              </div>
+
+              <div class="text-center text-sm text-gray-400">
+                <p>© 2025 Joven Emprendedor Forestal. All rights reserved.</p>
+                <a class="hover:text-secondary" href="#">Privacy Policy</a> | <a class="hover:text-secondary" href="#">Terms of Service</a>
+              </div>
+
+              <div class="flex gap-4">
+              <a class="text-gray-400 hover:text-secondary transition-colors" href="#"><svg aria-hidden="true" class="size-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12Z" fill-rule="evenodd"></path></svg></a>
+              <a class="text-gray-400 hover:text-secondary transition-colors" href="#"><svg aria-hidden="true" class="size-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0 0 22 5.92a8.19 8.19 0 0 1-2.357.646 4.118 4.118 0 0 0 1.804-2.27 8.224 8.224 0 0 1-2.605.996 4.107 4.107 0 0 0-6.993 3.743 11.65 11.65 0 0 1-8.457-4.287 4.106 4.106 0 0 0 1.27 5.477A4.072 4.072 0 0 1 2.8 9.71v.052a4.105 4.105 0 0 0 3.292 4.022 4.095 4.095 0 0 1-1.853.07 4.108 4.108 0 0 0 3.834 2.85A8.233 8.233 0 0 1 2 18.407a11.616 11.616 0 0 0 6.29 1.84"></path></svg></a>
+              <a class="text-gray-400 hover:text-secondary transition-colors" href="#"><svg aria-hidden="true" class="size-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.475 2.865 8.265 6.839 9.539.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0 0 22 12c0-5.523-4.477-10-10-10Z" fill-rule="evenodd"></path></svg></a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+  </body>
+</html>
