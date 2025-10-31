@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+    <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Dia de las empresas del bosque</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <script>
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            "primary": "#14b814",
+                            "background-light": "#f6f8f6",
+                            "background-dark": "#112111",
+                        },
+                        fontFamily: {
+                            "display": ["Work Sans", "sans-serif"]
+                        },
+                        borderRadius: {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                        },
+                    },
+                },
+            }
+    </script>
+    <style>
+            html {
+                scroll-behavior: smooth;
+            }
+        </style>
+    </head>
+    
+    <body class="font-display bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200">
+        <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+            <!-- Navegador -->
+            <header class="sticky top-0 z-50 flex items-center justify-center whitespace-nowrap border-b border-solid border-gray-200/80 dark:border-gray-700/80 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm px-4 md:px-10 py-3">
+                <div class="flex items-center justify-between w-full max-w-6xl">
+                    <a class="flex items-center gap-4 text-[#111811] dark:text-gray-100" href="#">
+                        <div class="size-6 text-primary">
+                            <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z"></path>
+                            <path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+
+                        <h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Día de las Empresas del Bosque</h2>
+                    </a>
+                    <div class="hidden md:flex flex-1 justify-end gap-8">
+                        <div class="flex items-center gap-9">
+                            <a class="text-[#111811] dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal" href="#about">About</a>
+                            <a class="text-[#111811] dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal" href="#timeline">Timeline</a>
+                            <a class="text-[#111811] dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal" href="#documents">Documents</a>
+                            <a class="text-[#111811] dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal" href="#events">Events</a>
+                            <a class="text-[#111811] dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal" href="#faq">FAQ</a>
+                        </div>
+                        <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                            <span class="truncate">Get Started</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="flex-grow">
+                <!-- Hero -->
+                <section class="w-full">
+                    <div class="flex min-h-[calc(100vh-68px)] flex-col gap-6 bg-cover bg-center bg-no-repeat items-center justify-center p-4 md:p-8" data-alt="A lush, green forest canopy viewed from above at sunrise." style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCR9CEJdZpDuozc-JbZmerG4hMs1K35kr8iQ6HkDshwHW02Rt6uPevIPhTUOs9NHRxxZVcITLtA91IzcEGDA43t7SJgDXD_dgDsPT-fab0URoI8UI1Ipq-XN8BpboH4dlsTZmwzLlcgEIrrg7YVhfx2WcVIToqpQ_tR3KiEGPrrC1g_9pnHuBD4Jyie_cin0Tw-EBOm5klYs539ZBNRMvn5M9rlQAF9a4OIaNXD3uZJW7E_Loz-CDnHL6Y4R8Qzt4YwMfatPMO6e1o");'>
+                        <div class="flex flex-col gap-4 text-center max-w-4xl">
+                            <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-6xl">Grow Your Future: The Frontier of Forestry Entrepreneurship</h1>
+                            <h2 class="text-white text-base font-normal leading-normal md:text-xl">Discover the potential of sustainable forestry and learn how to build a thriving business from the ground up.</h2>
+                        </div>
+                        <a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity" href="#about">
+                        <span class="truncate">Learn More</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="w-full py-16 md:py-24 px-4" id="about">
+                    <div class="max-w-4xl mx-auto flex flex-col gap-4">
+                        <h2 class="text-3xl font-bold leading-tight tracking-[-0.015em] text-[#111811] dark:text-gray-100">What is Forestry Entrepreneurship?</h2>
+                        <p class="text-base font-normal leading-relaxed text-gray-700 dark:text-gray-300">Forestry entrepreneurship involves creating and managing businesses centered around forest resources and ecosystems. It's a dynamic field that balances economic opportunities with environmental stewardship, focusing on sustainable practices like selective harvesting, reforestation, and developing non-timber forest products. This approach not only generates income but also contributes to the health of our planet, ensuring forests remain for generations to come.</p>
+                        <p class="text-base font-normal leading-relaxed text-gray-700 dark:text-gray-300">It represents a shift from traditional logging to a holistic view of forests as valuable, renewable assets. Entrepreneurs in this space are innovators, finding new ways to utilize wood, cultivate specialty mushrooms, tap into agroforestry, or build eco-tourism ventures. By embracing sustainability, they create resilient businesses that benefit local communities, sequester carbon, and preserve biodiversity.</p>
+                    </div>
+                </section>
+
+                <!-- Línea del tiempo -->
+                <section class="w-full py-16 md:py-24 px-4 bg-white dark:bg-background-dark/50" id="timeline">
+                    <div class="max-w-4xl mx-auto flex flex-col gap-8 items-center">
+                        <div class="text-center">
+                            <h2 class="text-3xl font-bold leading-tight tracking-[-0.015em] text-[#111811] dark:text-gray-100">Nuestras ediciones</h2>
+                            <p class="mt-2 text-base font-normal leading-normal text-gray-700 dark:text-gray-300">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                                Dolores eveniet fugit adipisci corrupti sed.
+                            </p>
+                        </div>
+                        <div class="relative w-full mt-8">
+                            <div class="absolute left-1/2 -translate-x-1/2 top-0 h-full w-0.5 bg-primary/30"></div>
+                            <div class="space-y-12">
+                                <div class="relative flex items-center justify-between">
+                                    <div class="w-[calc(50%-2rem)] flex justify-end">
+                                    <div class="bg-background-light dark:bg-background-dark p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 text-right">
+                                    <h3 class="font-bold text-lg text-primary">1. Planning &amp; Research</h3>
+                                    <p class="text-sm text-gray-700 dark:text-gray-300 mt-1">Develop a business plan, research land acquisition, and understand market demands.</p>
+                                    </div>
+                                </div>
+                                <div class="absolute left-1/2 -translate-x-1/2 z-10 size-8 rounded-full bg-primary flex items-center justify-center ring-8 ring-background-light dark:ring-background-dark/50"><span class="text-white text-xs font-bold">1</span></div>
+                                <div class="w-[calc(50%-2rem)]"></div>
+                                </div>
+                                <div class="relative flex items-center justify-between">
+                                    <div class="w-[calc(50%-2rem)]"></div>
+                                    <div class="absolute left-1/2 -translate-x-1/2 z-10 size-8 rounded-full bg-primary flex items-center justify-center ring-8 ring-background-light dark:ring-background-dark/50">
+                                        <span class="text-white text-xs font-bold">2</span>
+                                    </div>
+                                    
+                                    <div class="w-[calc(50%-2rem)] flex justify-start">
+                                        <div class="bg-background-light dark:bg-background-dark p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
+                                            <h3 class="font-bold text-lg text-primary">2. Funding &amp; Legal</h3>
+                                            <p class="text-sm text-gray-700 dark:text-gray-300 mt-1">Secure grants and funding. Navigate regulations and sustainability certifications.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="relative flex items-center justify-between">
+                                <div class="w-[calc(50%-2rem)] flex justify-end">
+                                <div class="bg-background-light dark:bg-background-dark p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 text-right">
+                                <h3 class="font-bold text-lg text-primary">3. Implementation</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300 mt-1">Begin sustainable harvesting, planting, or developing non-timber products.</p>
+                                </div>
+                                </div>
+                                <div class="absolute left-1/2 -translate-x-1/2 z-10 size-8 rounded-full bg-primary flex items-center justify-center ring-8 ring-background-light dark:ring-background-dark/50"><span class="text-white text-xs font-bold">3</span></div>
+                                <div class="w-[calc(50%-2rem)]"></div>
+                                </div>
+                                <div class="relative flex items-center justify-between">
+                                <div class="w-[calc(50%-2rem)]"></div>
+                                <div class="absolute left-1/2 -translate-x-1/2 z-10 size-8 rounded-full bg-primary flex items-center justify-center ring-8 ring-background-light dark:ring-background-dark/50"><span class="text-white text-xs font-bold">4</span></div>
+                                <div class="w-[calc(50%-2rem)] flex justify-start">
+                                <div class="bg-background-light dark:bg-background-dark p-6 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
+                                <h3 class="font-bold text-lg text-primary">4. Market Entry</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300 mt-1">Process materials, build your brand, and connect with buyers and markets.</p>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Documentos -->
+                <section class="w-full py-16 md:py-24 px-4" id="documents">
+                <div class="max-w-6xl mx-auto flex flex-col gap-8 items-center">
+                <div class="text-center">
+                <h2 class="text-3xl font-bold leading-tight tracking-[-0.015em] text-[#111811] dark:text-gray-100">Documents of Interest</h2>
+                <p class="mt-2 text-base font-normal leading-normal text-gray-700 dark:text-gray-300">Essential resources to guide your venture.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 w-full">
+                <div class="flex flex-col bg-white dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 group">
+                <div class="p-6 flex-grow">
+                <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-primary text-4xl">description</span>
+                <h3 class="font-bold text-lg text-[#111811] dark:text-gray-100">Business Plan Templates</h3>
+                </div>
+                <p class="text-sm text-gray-700 dark:text-gray-300 mt-2">Structured templates to help you build a solid business case for your forestry project.</p>
+                </div>
+                <a class="block bg-primary/10 dark:bg-primary/20 text-primary dark:text-green-300 p-4 text-center font-bold text-sm group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-colors" href="#">Download Now</a>
+                </div>
+                <div class="flex flex-col bg-white dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 group">
+                <div class="p-6 flex-grow">
+                <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-primary text-4xl">account_balance</span>
+                <h3 class="font-bold text-lg text-[#111811] dark:text-gray-100">Grant Applications</h3>
+                </div>
+                <p class="text-sm text-gray-700 dark:text-gray-300 mt-2">A collection of links to federal and state grants available for sustainable forestry.</p>
+                </div>
+                <a class="block bg-primary/10 dark:bg-primary/20 text-primary dark:text-green-300 p-4 text-center font-bold text-sm group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-colors" href="#">Explore Grants</a>
+                </div>
+                <div class="flex flex-col bg-white dark:bg-background-dark/50 rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 group">
+                <div class="p-6 flex-grow">
+                <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-primary text-4xl">verified</span>
+                <h3 class="font-bold text-lg text-[#111811] dark:text-gray-100">Sustainability Guidelines</h3>
+                </div>
+                <p class="text-sm text-gray-700 dark:text-gray-300 mt-2">Best practices and guidelines for ensuring your operations are environmentally responsible.</p>
+                </div>
+                <a class="block bg-primary/10 dark:bg-primary/20 text-primary dark:text-green-300 p-4 text-center font-bold text-sm group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-colors" href="#">Read Guidelines</a>
+                </div>
+                </div>
+                </div>
+                </section>
+
+                <!-- Eventos  -->
+                <section class="w-full py-16 md:py-24 px-4 bg-white dark:bg-background-dark/50 overflow-hidden" id="events">
+                <div class="max-w-6xl mx-auto flex flex-col gap-8 items-center">
+                <div class="text-center">
+                <h2 class="text-3xl font-bold leading-tight tracking-[-0.015em] text-[#111811] dark:text-gray-100">Past &amp; Upcoming Events</h2>
+                <p class="mt-2 text-base font-normal leading-normal text-gray-700 dark:text-gray-300">Connect with the community at our workshops and conferences.</p>
+                </div>
+                <div class="relative w-full mt-8">
+                <div class="flex animate-marquee-infinite hover:pause-animation gap-8">
+                <div class="flex-shrink-0 w-80 bg-white dark:bg-background-dark rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-gray-700">
+                <img class="w-full h-48 object-cover" data-alt="People collaborating at a workshop table with laptops and notes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5ev3_1P3lymNiVJ9jXwpZ8CJjT3lxhlbO79Dj0eluHhUauJjCzgFezU8jGeyAsi1tP5r33dY5VqUAJfJs26aCTxNDKCA_9dWPgtEygeIRePBo6we_W87onXluzbwkh75TXMeGFv2AGowYj4xX2GRM4AKQldErXRTOnnu1KSZ2w7x3tgvTmlyJEjkdNjcaqGSVSA1WOwU1oc2VHsz7tBYSL5AWr2FYLnXQcACLU_lhTaKiIy7SPGv8o7_o-nCDmXj2fvoMpHULuiE"/>
+                <div class="p-6">
+                <p class="text-sm font-medium text-primary">PAST EVENT - June 2024</p>
+                <h3 class="font-bold text-lg mt-1 text-[#111811] dark:text-gray-100">Sustainable Harvesting Workshop</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300 mt-2">A hands-on workshop covering selective logging techniques and forest regeneration.</p>
+                </div>
+                </div>
+                <div class="flex-shrink-0 w-80 bg-white dark:bg-background-dark rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-gray-700">
+                <img class="w-full h-48 object-cover" data-alt="A presenter speaking to an audience at a business conference." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXpMD5OEORSZo4zwHuuQNGBiy_8-N3kmVSiSjIrxu8vXc3AX1JqT8HzGMGH3bnJh84IBxknn1F101-jJB_O8WBFgwjr7Vwt4CAeuHeqME6a51B6342bS5M3NsP6xGs73LuKzGzgE1fqIm-0ks5XP5HTXemfQTHzHk6sQMz3qy0VKVUFqlrGV1ny-m-uKt1ifheu_1ACWSA0DP3xLNOxFau3-_MQcu3UP6a2GNjPhQ33T0LCB-7iwb-3ocKAqz16kRBDYLV8kC264M"/>
+                <div class="p-6">
+                <p class="text-sm font-medium text-primary">PAST EVENT - March 2024</p>
+                <h3 class="font-bold text-lg mt-1 text-[#111811] dark:text-gray-100">Forestry Futures Conference</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300 mt-2">Our annual conference bringing together experts in forestry, business, and technology.</p>
+                </div>
+                </div>
+                <div class="flex-shrink-0 w-80 bg-white dark:bg-background-dark rounded-xl overflow-hidden shadow-md border border-primary dark:border-primary ring-2 ring-primary/20">
+                <img class="w-full h-48 object-cover" data-alt="A group of people networking outdoors in a sunny, green environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2mScVIcuqc8uYk6F8sC_s4pOFEmrJgxDBmlPXkS8XMCIrbvhT4K2rwZUC94ZuhzGHnx7cI8wMoZYuhk77eGLGBWdlMbjjyZGCtMHuZrDMWlDUD1lnCePgM2aebIoNGWFK66KF1PeU8l5M9q4-4Kb3fjvNF8xgNS5qvq4OhlOB82CLSIKSoNPGf-lSMduwyAHQ5XDO00E7K9mQhm0uQJJMfZ4fRhO_LgvHO9Oml1xKEIYNxmgRXwjSCi9HlDgkxA1AloDDz5AFPjM"/>
+                <div class="p-6">
+                <p class="text-sm font-bold text-primary animate-pulse">UPCOMING - October 15, 2024</p>
+                <h3 class="font-bold text-lg mt-1 text-[#111811] dark:text-gray-100">Innovators Networking Meetup</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300 mt-2">An informal event to connect with peers, investors, and mentors in the field.</p>
+                <a class="inline-block mt-4 bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:opacity-90 transition-opacity" href="#">Register Now</a>
+                </div>
+                </div>
+                <div class="flex-shrink-0 w-80 bg-white dark:bg-background-dark rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-gray-700">
+                <img class="w-full h-48 object-cover" data-alt="People collaborating at a workshop table with laptops and notes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5ev3_1P3lymNiVJ9jXwpZ8CJjT3lxhlbO79Dj0eluHhUauJjCzgFezU8jGeyAsi1tP5r33dY5VqUAJfJs26aCTxNDKCA_9dWPgtEygeIRePBo6we_W87onXluzbwkh75TXMeGFv2AGowYj4xX2GRM4AKQldErXRTOnnu1KSZ2w7x3tgvTmlyJEjkdNjcaqGSVSA1WOwU1oc2VHsz7tBYSL5AWr2FYLnXQcACLU_lhTaKiIy7SPGv8o7_o-nCDmXj2fvoMpHULuiE"/>
+                <div class="p-6">
+                <p class="text-sm font-medium text-primary">PAST EVENT - June 2024</p>
+                <h3 class="font-bold text-lg mt-1 text-[#111811] dark:text-gray-100">Sustainable Harvesting Workshop</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300 mt-2">A hands-on workshop covering selective logging techniques and forest regeneration.</p>
+                </div>
+                </div>
+                <div class="flex-shrink-0 w-80 bg-white dark:bg-background-dark rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-gray-700">
+                <img class="w-full h-48 object-cover" data-alt="A presenter speaking to an audience at a business conference." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXpMD5OEORSZo4zwHuuQNGBiy_8-N3kmVSiSjIrxu8vXc3AX1JqT8HzGMGH3bnJh84IBxknn1F101-jJB_O8WBFgwjr7Vwt4CAeuHeqME6a51B6342bS5M3NsP6xGs73LuKzGzgE1fqIm-0ks5XP5HTXemfQTHzHk6sQMz3qy0VKVUFqlrGV1ny-m-uKt1ifheu_1ACWSA0DP3xLNOxFau3-_MQcu3UP6a2GNjPhQ33T0LCB-7iwb-3ocKAqz16kRBDYLV8kC264M"/>
+                <div class="p-6">
+                <p class="text-sm font-medium text-primary">PAST EVENT - March 2024</p>
+                <h3 class="font-bold text-lg mt-1 text-[#111811] dark:text-gray-100">Forestry Futures Conference</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300 mt-2">Our annual conference bringing together experts in forestry, business, and technology.</p>
+                </div>
+                </div>
+                <div class="flex-shrink-0 w-80 bg-white dark:bg-background-dark rounded-xl overflow-hidden shadow-md border border-primary dark:border-primary ring-2 ring-primary/20">
+                <img class="w-full h-48 object-cover" data-alt="A group of people networking outdoors in a sunny, green environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2mScVIcuqc8uYk6F8sC_s4pOFEmrJgxDBmlPXkS8XMCIrbvhT4K2rwZUC94ZuhzGHnx7cI8wMoZYuhk77eGLGBWdlMbjjyZGCtMHuZrDMWlDUD1lnCePgM2aebIoNGWFK66KF1PeU8l5M9q4-4Kb3fjvNF8xgNS5qvq4OhlOB82CLSIKSoNPGf-lSMduwyAHQ5XDO00E7K9mQhm0uQJJMfZ4fRhO_LgvHO9Oml1xKEIYNxmgRXwjSCi9HlDgkxA1AloDDz5AFPjM"/>
+                <div class="p-6">
+                <p class="text-sm font-bold text-primary animate-pulse">UPCOMING - October 15, 2024</p>
+                <h3 class="font-bold text-lg mt-1 text-[#111811] dark:text-gray-100">Innovators Networking Meetup</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300 mt-2">An informal event to connect with peers, investors, and mentors in the field.</p>
+                <a class="inline-block mt-4 bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg hover:opacity-90 transition-opacity" href="#">Register Now</a>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                <style type="text/tailwindcss">
+                        @layer utilities {
+                        @keyframes marquee {
+                            0% { transform: translateX(0%); }
+                            100% { transform: translateX(-100%); }
+                        }
+                        .animate-marquee-infinite {
+                            animation: marquee 30s linear infinite;
+                            display: flex;
+                        }
+                        .hover\:pause-animation:hover {
+                            animation-play-state: paused;
+                        }
+                        }
+                    </style>
+                </section>
+
+                <!-- Preguntas Frecuentes -->
+                <section class="w-full py-16 md:py-24 px-4" id="faq">
+                    <div class="max-w-4xl mx-auto flex flex-col gap-8">
+                        <div class="text-center">
+                        <h2 class="text-3xl font-bold leading-tight tracking-[-0.015em] text-[#111811] dark:text-gray-100">Frequently Asked Questions</h2>
+                        <p class="mt-2 text-base font-normal leading-normal text-gray-700 dark:text-gray-300">Your common inquiries, answered.</p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <details class="group bg-white dark:bg-background-dark/50 p-4 rounded-lg border border-gray-200 dark:border-gray-700 cursor-pointer">
+                                <summary class="flex items-center justify-between font-bold text-lg text-[#111811] dark:text-gray-100">Pregunta 1 <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span></summary>
+                                <p class="text-base text-gray-700 dark:text-gray-300 mt-4 leading-relaxed">Initial costs can vary widely based on land acquisition, equipment, and the scale of your operation. A detailed business plan is crucial for estimating your specific needs. Many entrepreneurs start by leasing land or partnering with existing landowners to reduce upfront capital expenditure.</p>
+                            </details>
+                                <details class="group bg-white dark:bg-background-dark/50 p-4 rounded-lg border border-gray-200 dark:border-gray-700 cursor-pointer">
+                                <summary class="flex items-center justify-between font-bold text-lg text-[#111811] dark:text-gray-100">Pregunta 2<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span></summary>
+                                <p class="text-base text-gray-700 dark:text-gray-300 mt-4 leading-relaxed">Regulations depend on your location and business type. Key areas include environmental protection laws, harvesting permits, land use zoning, and business licensing. We recommend consulting with local forestry commissions and legal experts to ensure full compliance.</p>
+                            </details>
+                            <details class="group bg-white dark:bg-background-dark/50 p-4 rounded-lg border border-gray-200 dark:border-gray-700 cursor-pointer">
+                                <summary class="flex items-center justify-between font-bold text-lg text-[#111811] dark:text-gray-100">Pregunta 3 <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span></summary>
+                                <p class="text-base text-gray-700 dark:text-gray-300 mt-4 leading-relaxed">Sustainability is at the core of modern forestry. Key practices include developing a long-term forest management plan, using selective harvesting methods, promoting biodiversity, and pursuing certifications from organizations like the Forest Stewardship Council (FSC) or the Sustainable Forestry Initiative (SFI).</p>
+                            </details>
+                            <details class="group bg-white dark:bg-background-dark/50 p-4 rounded-lg border border-gray-200 dark:border-gray-700 cursor-pointer">
+                                <summary class="flex items-center justify-between font-bold text-lg text-[#111811] dark:text-gray-100">Pregunta 4<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span></summary>
+                                <p class="text-base text-gray-700 dark:text-gray-300 mt-4 leading-relaxed">Non-timber forest products (NTFPs) are goods other than timber that are harvested from forests. Examples include medicinal plants, gourmet mushrooms, maple syrup, resins, and materials for crafts. Developing NTFPs can be a great way to diversify your income streams and add value to your forest land.</p>
+                            </details>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Footer -->
+            <footer class="w-full bg-white dark:bg-background-dark/50 border-t border-gray-200 dark:border-gray-700 py-12 px-4">
+                <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="flex items-center gap-4 text-[#111811] dark:text-gray-100">
+                        <div class="size-6 text-primary">
+                            <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z"></path>
+                            <path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    <h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Forestry Futures</h2>
+                    </div>
+                    <div class="text-center md:text-right">
+                        <p class="text-sm text-gray-700 dark:text-gray-300">© 2024 Forestry Futures. All rights reserved.</p>
+                        <div class="flex items-center justify-center md:justify-end gap-4 mt-2">
+                            <a class="text-gray-700 dark:text-gray-300 dark:hover:text-white hover:text-primary" href="#">Privacy Policy</a>
+                            <a class="text-gray-700 dark:text-gray-300 dark:hover:text-white hover:text-primary" href="#">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
