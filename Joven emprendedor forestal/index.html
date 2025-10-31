@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Joven Emprendedor Forestal</title>
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+        <!-- Bootstrap style -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+        <!-- Bootsrap icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+        <style>
+            * {
+                font-family: 'Space Grotesk', sans-serif;
+            }
+
+            section:not(.hero) {
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            p {
+                font-size: .9rem;
+            }
+
+            .nav-header {
+                transition: background .6s ease;
+
+            }
+            .navbar-nav .nav-link {
+                color: white;
+                font-weight: bold;
+            }
+
+            .bg-scroll-white {
+                background-color: #fff;
+                transition: background 1s ease;
+
+            }
+
+            .bg-scroll-white .navbar .container .collapse .navbar-nav .nav-link {
+                color: rgb(0, 96, 115)!important;
+            }
+
+            .hero {
+                position: relative;
+            }
+
+            .text-azul {
+                color: rgb(0, 95, 115);
+            }
+
+            .principal-content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            /* Meter el media query de .principal-content */
+
+            /* Sobre JEF */
+            .title-card-impact span {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background: rgb(223, 241, 235);
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            .title-card-impact span > i{
+                font-size: 1.5rem;
+                color: rgb(0, 95, 115);
+            }
+
+            /* Timeline */
+            .timeline {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                max-width: 900px;
+                margin: 0 auto;
+            }
+
+            .timeline::before {
+                content:'';
+                position: absolute;
+                top: 0;
+                width: 4px;
+                height: 100%;
+                background-color: rgba(0, 96, 115, 0.747);
+                transform: translateX(-50%);
+                z-index: 0;
+            }
+
+            .timeline-item {
+                position: relative;
+                left: 0;
+                width: 100%;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                text-align: center;
+                z-index: 1;
+            }
+
+
+            .timeline-item .card {
+                z-index: 3;
+                min-height: 150px;
+                transition: 
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease;
+            }
+
+            .timeline-item .card:hover  {
+                transform: translateX(-10px);
+                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15)!important;
+            }
+
+
+            /* punto timeline */
+            .timeline-item .card::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: -2.3rem;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: rgb(0, 96, 115);
+                transform: translateY(-50%);
+                z-index: 2;
+
+                transition: 
+                    left .3s ease,
+                    width .3s ease,
+                    height .3s ease
+                ;
+
+            }
+
+            .timeline-item:hover .card::before {
+                left: -2rem;
+                width: 30px;
+                height: 30px;
+            }
+
+            /* hacer responsive .timeline-item::before */
+            @media (max-width: 500px) {
+                .timeline::before {
+                    left: 3rem;
+                }
+
+                .timeline-item {
+                    width: 64%;
+                }
+
+                .timeline-item .card {
+                    width: 100%;
+                }
+            }
+
+            @media (min-width: 500px) {
+                .timeline::before {
+                    left: 4rem;
+                }
+
+                .timeline-item {
+                    left: 0;
+                    width: 64%;
+                }
+
+                .timeline-item .card {
+                    width: 100%;
+                }
+            }
+
+
+            @media (min-width: 768px) {
+                .timeline::before {
+                    left: 16.1%;
+                }
+
+                .timeline-item {
+                    width: 60%;
+                }
+
+                .timeline-item .card {
+                    width: 100%;
+                }
+            }
+
+            @media (min-width: 1000px) {
+                .timeline::before {
+                    left: 17.1%;
+                }
+            }
+
+
+
+
+
+
+            /* Galeria de imgs */
+            .carrusel-docs-caption {
+                bottom: 0rem!important;
+                padding-top: .5rem!important;
+                padding-bottom: .5rem!important;
+            }
+
+            .item-carrusel {
+                color: rgba(0, 95, 115, 1);
+            }
+
+            .item-carrusel i {
+                font-size: 1.5rem;
+            }
+
+            .carrusel-docs-indicators button {
+                background-color: rgba(0, 95, 115, 1)!important;
+            }
+
+            .btn-docs-carrusel {
+                background-color: rgba(0, 95, 115, 1)!important;
+                border-color: rgba(0, 95, 115, 1)!important;
+            }
+
+            .btn-docs-carrusel:hover {
+                background-color: rgb(1, 122, 146)!important;
+                border-color: rgb(1, 122, 146)!important;
+            }
+
+            .btn-docs-carrusel:focus {
+                background-color: rgb(0, 130, 156)!important;
+                border-color: rgb(0, 130, 156)!important;
+            }
+
+            /* Documentos de interés  */
+            .iframe-documento {
+            height: 500px!important;
+            }
+
+            /* Preguntas frecuentes */
+            .faq-item  {
+                background-color: #f6f6f6;
+            }
+
+            .faq-item summary {
+                list-style: none;
+                cursor: pointer;
+                position: relative;
+                padding-right: 1.5rem;
+
+            }
+
+            .faq-item summary::-webkit-details-market {
+                display: none;
+            }
+
+            .faq-item summary::after {
+                content: '+';
+                position: absolute;
+                top: 5%;
+                right: 0;
+                transition: transform 0.3s ease;
+            }
+
+            .faq-item .summary-details {
+                display: grid;
+                grid-template-rows: 0fr;
+                overflow: hidden;
+                opacity: 0;
+                transition:
+                    grid-template-rows 0.4s ease,
+                    opacity 0.3s ease;
+            }
+
+            .faq-item[open] .summary-details {
+                grid-template-rows: 1fr;
+                opacity: 1;
+            }
+
+            .faq-item[open] summary::after {
+                transform: rotate(180deg);
+                content: '-';
+            }
+
+            .card-body p {
+                font-size: .85rem;
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+        <header class="nav-header fixed-top">
+            <nav class="navbar navbar-expand-lg bg-transparent" id="principal-nav">
+                <div class="container">
+                    <a class="navbar-brand" href="#"> JEF</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-2">
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Sobre JEF</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Eventos pasados</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Documentos de interés</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Galería</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="" class="nav-link">Preguntas frecuentes</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Principal Hero -->
+        <section class="hero " style="min-height: 800px; background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.3) 100%), url('https://fastly.picsum.photos/id/11/2500/1667.jpg?hmac=xxjFJtAPgshYkysU_aqx2sZir-kIOjNR9vx0te7GycQ'); background-position: center; background-repeat: no-repeat; background-size:covera;">
+            <div class="container">
+
+                <div class="principal-content">
+                    <div class="title-content">
+                        <h1 class="text-white"> Joven Emprendedor Forestal</h1>
+                    </div>
+
+                    <div class="subtitle-content">
+                        <p class="text-white">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat quibusdam atque velit fuga modi similique asperiores ab nam,
+                            ducimus iusto dolores molestias molestiae itaque sit in consequuntur veritatis ut? Nihil?
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ¿Qué es JEF -->
+        <section class="whats-jef" style="margin-top: 30px; margin-bottom: 30px;">
+            <div class="container content-whats-jef">
+                <div class="title-content">
+                    <h2 class="text-center">¿Qué es Joven Emprendedor Forestal?</h2>
+
+                    <div class="row row-cols-1 justify-content-center">
+                        <div class="col-12 col-lg-10">
+                            <p class="text-black-50 ">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Esse repudiandae doloremque temporibus quo dignissimos labore mollitia minima consectetur aperiam obcaecati?
+
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Esse repudiandae doloremque temporibus quo dignissimos labore mollitia minima consectetur aperiam obcaecati?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impacto -->
+                <div class="content-impact">
+                    <h3 class="text-center my-5">Impacto</h3>
+
+                    <div class="row row-cols-1 row-cols-md-3 g-4 p-3 justify-content-between">
+                        <div class="col d-flex align-items-stretch justify-content-center">
+                            <div class="card w-100 h-100 bg-transparent border-0 shadow p-2" style="max-width: 350px;">
+                                <div class="card-header bg-transparent border-0">
+                                    <div class="row row-cols-1 justify-content-center title-card-impact">
+                                        <span class="text-black text-center d-grid align-items-center">
+                                            <i class="bi bi-mortarboard-fill"></i>
+                                        </span>
+                                        <h6 class="text-center">Capacitaciones</h6>
+                                    </div>
+                                </div>
+
+                                <div class="card-body border-0 d-grid align-items-center">
+
+                                    <div class="results-content d-grid justify-content-center text-center" >
+                                        <span class="">
+                                            +10,000
+                                        </span>
+                                        <p class="text-black-50 ">
+                                            Estudiantes capacitados
+                                        </p>
+                                    </div>
+
+                                    <div class="results-content d-grid text-center">
+                                        <span class="text-center">
+                                            382
+                                        </span>
+                                        <p class="text-black-50">
+                                            Docentes formados
+                                        </p>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col d-flex align-items-stretch justify-content-center">
+                            <div class="card w-100 h-100 bg-transparent border-0 shadow p-2" style="max-width: 350px;">
+                                <div class="card-header bg-transparent border-0">
+                                    <div class="row row-cols-1 justify-content-center title-card-impact">
+                                        <span class="text-center d-grid align-items-center">
+                                            <i class="bi bi-building-fill-check"></i>
+                                        </span>
+                                        <h6 class="text-center">Emprendimiento</h6>
+                                    </div>
+
+                                </div>
+
+                                <div class="card-body border-0 d-grid align-items-center">
+                                    <div class="results-content d-grid">
+                                        <span class="text-center">
+                                            694
+                                        </span>
+                                        <p class="text-black-50 text-center">
+                                            Ideas desarrolladas
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col d-flex align-items-stretch justify-content-center">
+                            <div class="card w-100 h-100 bg-transparent border-0 shadow p-2" style="max-width: 350px;">
+                                <div class="card-header bg-transparent border-0">
+                                    <div class="row row-cols-1 justify-content-center title-card-impact">
+                                        <span class="text-center d-grid align-items-center">
+                                            <i class="bi bi-people-fill"></i>
+
+                                        </span>
+
+                                        <h6 class="text-center">Comunidad</h6>
+                                    </div>
+
+                                </div>
+
+                                <div class="card-body border-0 d-grid align-items-center">
+                                    <div class="results-content d-grid">
+                                        <span class="text-center">
+                                            13
+                                        </span>
+                                        <p class="text-black-50 text-center">
+                                            Paises
+                                        </p>
+                                    </div>
+                                    <div class="results-content d-grid">
+                                        <span class="text-center">
+                                            80
+                                        </span>
+                                        <p class="text-black-50 text-center">
+                                            Universidades
+                                        </p>
+                                    </div>
+
+                                    <p class="text-black-50">
+
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Línea del tiempo -->
+        <section class="timeline-section">
+            <div class="container">
+                <div class="title-content">
+                    <h2 class="text-center">Nuestras ediciones pasadas </h2>
+
+                    <div class="row row-cols-1 row-cols-md-2 justify-content-center">
+                        <div class="col">
+                            <p class="text-black-50 text-center">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Esse repudiandae doloremque temporibus quo dignissimos labore mollitia minima consectetur aperiam obcaecati?
+                            </p>
+                        </div>
+                    </div>
+
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="card bg-transparent border-0 shadow-sm">
+                            <div class="card-body border-0 bg-transparent">
+                                <h5 class="card-title text-azul">
+                                    2019
+                                </h5>
+
+                                <p class="card-text">
+                                    Lorem ipsum dolor,
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item right">
+                        <div class="card bg-transparent border-0 shadow-sm">
+                            <div class="card-body border-0 bg-transparent">
+                                <h5 class="card-title text-azul">
+                                    2020
+                                </h5>
+
+                                <p class="card-text">
+                                    Lorem ipsum dolor,
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item left">
+                        <div class="card bg-transparent border-0 shadow-sm">
+                            <div class="card-body border-0 bg-transparent">
+                                <h5 class="card-title text-azul">
+                                    2021
+                                </h5>
+
+                                <p class="card-text">
+                                    Lorem ipsum dolor,
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item right">
+                        <div class="card bg-transparent border-0 shadow-sm">
+                            <div class="card-body border-0 bg-transparent">
+                                <h5 class="card-title text-azul">
+                                    2022
+                                </h5>
+
+                                <p class="card-text">
+                                    Lorem ipsum dolor,
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item right">
+                        <div class="card bg-transparent border-0 shadow-sm">
+                            <div class="card-body border-0 bg-transparent">
+                                <h5 class="card-title text-azul">
+                                    2023
+                                </h5>
+
+                                <p class="card-text">
+                                    Lorem ipsum dolor,
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="timeline-item right">
+                        <div class="card bg-transparent border-0 shadow-sm">
+                            <div class="card-body border-0 bg-transparent">
+                                <h5 class="card-title text-azul">
+                                    2024
+                                </h5>
+
+                                <p class="card-text">
+                                    Lorem ipsum dolor,
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentos de interés -->
+        <section class="files">
+            <div class="container">
+                <div class="title-content">
+                    <h2 class="text-center">Documentos de interés </h2>
+
+                    <div class="row row-cols-1 row-cols-md-2 justify-content-center">
+                        <div class="col">
+                            <p class="text-black-50 text-center">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Esse repudiandae doloremque temporibus quo dignissimos labore mollitia minima consectetur aperiam obcaecati?
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row row-cols-1 row-cols-lg-2 g-4 p-3 justify-content-center align-items-center">
+
+                    <!-- Documentos de Interés Carrusel -->
+                    <div class="col d-flex align-items-stretch">
+                        <div class="card w-100 h-100 bg-transparent border-0 shadow-sm p-2" >
+                            <div class="card-header bg-transparent border-0">
+                                <h6 class="">Materiales de interés</h6>
+                            </div>
+
+                            <div class="card-body border-0">
+                                <div id="carruselDocs" class="carousel slide carousel-fade">
+
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <div class="ratio ratio-16x9 border rounded shadow-sm iframe-documento">
+                                                <iframe src="src/docs/SEMÁFORO DE PIGMENTACIÓN.pdf" frameborder="0" allowfullscreen></iframe>
+                                            </div>
+
+                                            <div class="carousel-caption carrusel-docs-caption">
+                                                <div class="btn-content">
+                                                    <a href="#" class="btn btn-primary btn-docs-carrusel" style="font-size: .7rem!important;">Leer documento</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item">
+                                            <div class="ratio ratio-16x9 border rounded shadow-sm iframe-documento">
+                                                <iframe  src="src/docs/ESQUEMA DE USO GRADUAL PARA LÍNEA DE ACLARANTES BRAFER.pdf" frameborder="0" allowfullscreen></iframe>
+                                            </div>
+
+                                            <div class="carousel-caption carrusel-docs-caption">
+                                                <div class="btn-content">
+                                                    <a href="#" class="btn btn-primary btn-docs-carrusel" style="font-size: .7rem!important;">Leer documento</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item">
+                                            <div class="ratio ratio-16x9 border rounded shadow-sm iframe-documento">
+                                                <iframe src="src/docs/LISTADO MAESTRO PRODUCTOS BRAFER PÚBLICO.pdf" frameborder="0" allowfullscreen></iframe>
+                                            </div>
+
+                                            <div class="carousel-caption carrusel-docs-caption">
+                                                <div class="btn-content">
+                                                    <a href="#" class="btn btn-primary btn-docs-carrusel" style="font-size: .7rem!important;">Leer documento</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carruselDocs" data-bs-slide="prev">
+                                        <span class="item-carrusel">
+                                            <i class="bi bi-arrow-left-circle-fill"></i>
+                                        </span>
+                                    </button>
+
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carruselDocs" data-bs-slide="next">
+                                        <span class="item-carrusel">
+                                            <i class="bi bi-arrow-right-circle-fill"></i>
+                                        </span>
+                                    </button>
+
+                                </div>
+
+                                <div class="carousel-indicators carrusel-docs-indicators">
+                                    <button type="button" data-bs-target="#carruselDocs" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carruselDocs" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carruselDocs" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                            </div>
+
+                            <div class="card-footer border-0 bg-transparent">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Videos YT, capacitaciones -->
+
+                    <div class="col d-flex align-items-stretch" style="height: 609px;">
+                        <div class="row row-cols-1 gap-3">
+                            <!-- Videos YT -->
+                            <div class="col d-flex align-items-stretch">
+                                <div class="card w-100 h-100 bg-transparent border-0 shadow-sm p-2" >
+                                    <div class="card-header bg-transparent border-0">
+                                        <h6 class="">Videos</h6>
+                                    </div>
+
+                                    <div class="card-body border-0">
+                                        <p class="text-black-50">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                        </p>
+                                    </div>
+
+                                    <div class="card-footer border-0 bg-transparent">
+                                        <div class="btn-content">
+                                            <a href="#" class="btn btn-primary btn-docs-carrusel">Saber más</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Capacitaciones -->
+                            <div class="col d-flex align-items-stretch">
+                                <div class="card w-100 h-100 bg-transparent border-0 shadow-sm p-2" >
+                                    <div class="card-header bg-transparent border-0">
+                                        <h6 class="">Capacitaciones</h6>
+                                    </div>
+
+                                    <div class="card-body border-0">
+                                        <p class="text-black-50">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                        </p>
+                                    </div>
+
+                                    <div class="card-footer border-0 bg-transparent">
+                                        <div class="btn-content">
+                                            <a href="#" class="btn btn-primary btn-docs-carrusel">Saber más</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </section>
+
+        <!-- Galería de Imgs -->
+        <section class="galeria">
+            <div class="container">
+                <div class="title-content">
+                    <h2 class="text-center">Revive las ediciones pasadas </h2>
+
+                    <div class="row row-cols-1 row-cols-md-2 justify-content-center">
+                        <div class="col">
+                            <p class="text-black-50 text-center">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Esse repudiandae doloremque temporibus quo dignissimos labore mollitia minima consectetur aperiam obcaecati?
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Sección galería -->
+                <div class="container">
+                    <div class="row row-cols-1 justify-content-center">
+
+                        <!-- Carrusel para DESKTOP (pantallas medianas y grandes) -->
+                        <div id="carrusellGaleriaDesktop" class="carousel slide d-none d-md-block" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carrusellGaleriaDesktop" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carrusellGaleriaDesktop" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carrusellGaleriaDesktop" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row g-3 justify-content-center align-items-center px-3">
+                                        <div class="col-md-4 text-center">
+                                            <img src="https://fastly.picsum.photos/id/54/3264/2176.jpg?hmac=blh020fMeJ5Ru0p-fmXUaOAeYnxpOPHnhJojpzPLN3g"
+                                                class="img-fluid rounded"
+                                                style="max-width: 300px; width: 100%; height: auto;"
+                                                alt="Imagen 1">
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <img src="https://fastly.picsum.photos/id/55/4608/3072.jpg?hmac=ahGhylwdN52ULB37deeMZX6T_G7NiERtoPhwydMvUKQ"
+                                                class="img-fluid rounded"
+                                                style="max-width: 300px; width: 100%; height: auto;"
+                                                alt="Imagen 2">
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <img src="https://fastly.picsum.photos/id/58/1280/853.jpg?hmac=YO3QnOm9TpyM5DqsJjoM4CHg8oIq4cMWLpd9ALoP908"
+                                                class="img-fluid rounded"
+                                                style="max-width: 300px; width: 100%; height: auto;"
+                                                alt="Imagen 3">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="row g-3 justify-content-center align-items-center px-3">
+                                        <div class="col-md-4 text-center">
+                                            <img src="https://fastly.picsum.photos/id/58/1280/853.jpg?hmac=YO3QnOm9TpyM5DqsJjoM4CHg8oIq4cMWLpd9ALoP908"
+                                                class="img-fluid rounded"
+                                                style="max-width: 300px; width: 100%; height: auto;"
+                                                alt="Imagen 3">
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <img src="https://fastly.picsum.photos/id/54/3264/2176.jpg?hmac=blh020fMeJ5Ru0p-fmXUaOAeYnxpOPHnhJojpzPLN3g"
+                                                class="img-fluid rounded"
+                                                style="max-width: 300px; width: 100%; height: auto;"
+                                                alt="Imagen 1">
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <img src="https://fastly.picsum.photos/id/55/4608/3072.jpg?hmac=ahGhylwdN52ULB37deeMZX6T_G7NiERtoPhwydMvUKQ"
+                                                class="img-fluid rounded"
+                                                style="max-width: 300px; width: 100%; height: auto;"
+                                                alt="Imagen 2">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="row g-3 justify-content-center align-items-center px-3">
+                                        <div class="col-md-4 text-center">
+                                            <img src="https://fastly.picsum.photos/id/55/4608/3072.jpg?hmac=ahGhylwdN52ULB37deeMZX6T_G7NiERtoPhwydMvUKQ"
+                                                class="img-fluid rounded"
+                                                style="max-width: 300px; width: 100%; height: auto;"
+                                                alt="Imagen 2">
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <img src="https://fastly.picsum.photos/id/58/1280/853.jpg?hmac=YO3QnOm9TpyM5DqsJjoM4CHg8oIq4cMWLpd9ALoP908"
+                                                class="img-fluid rounded"
+                                                style="max-width: 300px; width: 100%; height: auto;"
+                                                alt="Imagen 3">
+                                        </div>
+                                        <div class="col-md-4 text-center">
+                                            <img src="https://fastly.picsum.photos/id/54/3264/2176.jpg?hmac=blh020fMeJ5Ru0p-fmXUaOAeYnxpOPHnhJojpzPLN3g"
+                                                class="img-fluid rounded"
+                                                style="max-width: 300px; width: 100%; height: auto;"
+                                                alt="Imagen 1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carrusellGaleriaDesktop" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+
+                            <button class="carousel-control-next" type="button" data-bs-target="#carrusellGaleriaDesktop" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <!-- Carrusel para MÓVIL (pantallas pequeñas) -->
+                        <div id="carrusellGaleriaMobile" class="carousel slide d-md-none" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carrusellGaleriaMobile" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carrusellGaleriaMobile" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carrusellGaleriaMobile" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carrusellGaleriaMobile" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carrusellGaleriaMobile" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                <button type="button" data-bs-target="#carrusellGaleriaMobile" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                <button type="button" data-bs-target="#carrusellGaleriaMobile" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                                <button type="button" data-bs-target="#carrusellGaleriaMobile" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                                <button type="button" data-bs-target="#carrusellGaleriaMobile" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                            </div>
+
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="text-center px-3">
+                                        <img src="https://fastly.picsum.photos/id/54/3264/2176.jpg?hmac=blh020fMeJ5Ru0p-fmXUaOAeYnxpOPHnhJojpzPLN3g"
+                                            class="img-fluid rounded"
+                                            style="max-width: 300px; width: 100%; height: auto;"
+                                            alt="Imagen 1">
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="text-center px-3">
+                                        <img src="https://fastly.picsum.photos/id/55/4608/3072.jpg?hmac=ahGhylwdN52ULB37deeMZX6T_G7NiERtoPhwydMvUKQ"
+                                            class="img-fluid rounded"
+                                            style="max-width: 300px; width: 100%; height: auto;"
+                                            alt="Imagen 2">
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="text-center px-3">
+                                        <img src="https://fastly.picsum.photos/id/58/1280/853.jpg?hmac=YO3QnOm9TpyM5DqsJjoM4CHg8oIq4cMWLpd9ALoP908"
+                                            class="img-fluid rounded"
+                                            style="max-width: 300px; width: 100%; height: auto;"
+                                            alt="Imagen 3">
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="text-center px-3">
+                                        <img src="https://fastly.picsum.photos/id/58/1280/853.jpg?hmac=YO3QnOm9TpyM5DqsJjoM4CHg8oIq4cMWLpd9ALoP908"
+                                            class="img-fluid rounded"
+                                            style="max-width: 300px; width: 100%; height: auto;"
+                                            alt="Imagen 3">
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="text-center px-3">
+                                        <img src="https://fastly.picsum.photos/id/54/3264/2176.jpg?hmac=blh020fMeJ5Ru0p-fmXUaOAeYnxpOPHnhJojpzPLN3g"
+                                            class="img-fluid rounded"
+                                            style="max-width: 300px; width: 100%; height: auto;"
+                                            alt="Imagen 1">
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="text-center px-3">
+                                        <img src="https://fastly.picsum.photos/id/55/4608/3072.jpg?hmac=ahGhylwdN52ULB37deeMZX6T_G7NiERtoPhwydMvUKQ"
+                                            class="img-fluid rounded"
+                                            style="max-width: 300px; width: 100%; height: auto;"
+                                            alt="Imagen 2">
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="text-center px-3">
+                                        <img src="https://fastly.picsum.photos/id/55/4608/3072.jpg?hmac=ahGhylwdN52ULB37deeMZX6T_G7NiERtoPhwydMvUKQ"
+                                            class="img-fluid rounded"
+                                            style="max-width: 300px; width: 100%; height: auto;"
+                                            alt="Imagen 2">
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="text-center px-3">
+                                        <img src="https://fastly.picsum.photos/id/58/1280/853.jpg?hmac=YO3QnOm9TpyM5DqsJjoM4CHg8oIq4cMWLpd9ALoP908"
+                                            class="img-fluid rounded"
+                                            style="max-width: 300px; width: 100%; height: auto;"
+                                            alt="Imagen 3">
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="text-center px-3">
+                                        <img src="https://fastly.picsum.photos/id/54/3264/2176.jpg?hmac=blh020fMeJ5Ru0p-fmXUaOAeYnxpOPHnhJojpzPLN3g"
+                                            class="img-fluid rounded"
+                                            style="max-width: 300px; width: 100%; height: auto;"
+                                            alt="Imagen 1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carrusellGaleriaMobile" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+
+                            <button class="carousel-control-next" type="button" data-bs-target="#carrusellGaleriaMobile" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="preguntas-frecuentes">
+            <div class="container">
+                <div class="title-content">
+                    <h2 class="text-center">Preguntas frecuentes</h2>
+
+                </div>
+
+                <div class="row row-cols-1 justify-content-center">
+                    <div class="section-preguntas-frecuentes py-5">
+                        <details class="faq-item rounded-3 p-3 my-2">
+                            <summary>
+                                <h6>Pregunta 1</h6>
+                            </summary>
+                            <div class="summary-details">
+                                <p class="text-black-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae sit saepe cupiditate quos quisquam incidunt deserunt, unde iusto nam, quam dolores sapiente obcaecati sed, qui est laboriosam magni. Dignissimos, veritatis.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item rounded-3 p-3 my-2">
+                            <summary>
+                                <h6>Pregunta 2</h6>
+                            </summary>
+                            <div class="summary-details">
+                                <p class="text-black-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae sit saepe cupiditate quos quisquam incidunt deserunt, unde iusto nam, quam dolores sapiente obcaecati sed, qui est laboriosam magni. Dignissimos, veritatis.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item rounded-3 p-3 my-2">
+                            <summary>
+                                <h6>Pregunta 3</h6>
+                            </summary>
+                            <div class="summary-details">
+                                <p class="text-black-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae sit saepe cupiditate quos quisquam incidunt deserunt, unde iusto nam, quam dolores sapiente obcaecati sed, qui est laboriosam magni. Dignissimos, veritatis.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item rounded-3 p-3 my-2">
+                            <summary>
+                                <h6>Pregunta 4</h6>
+                            </summary>
+                            <div class="summary-details">
+                                <p class="text-black-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae sit saepe cupiditate quos quisquam incidunt deserunt, unde iusto nam, quam dolores sapiente obcaecati sed, qui est laboriosam magni. Dignissimos, veritatis.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Bootstrap sctrpt -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+        <!-- script para el header y el carrusel de imagenes -->
+        <script>
+            document.addEventListener('DOMContentLoaded', ()=> {
+                const navHeader = document.querySelector('.nav-header');
+                window.addEventListener('scroll', ()=> {
+                    if (window.scrollY === 0){
+                        navHeader.classList.remove('bg-scroll-white');
+                    } else {
+                        navHeader.classList.add('bg-scroll-white');
+
+                    }
+                })
+            })
+        </script>
+    </body>
+</html>
