@@ -76,11 +76,10 @@
         /* Hero Section */
         .hero-section {
             min-height: calc(100vh - 68px);
-            background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), 
-                url("https://lh3.googleusercontent.com/aida-public/AB6AXuCR9CEJdZpDuozc-JbZmerG4hMs1K35kr8iQ6HkDshwHW02Rt6uPevIPhTUOs9NHRxxZVcITLtA91IzcEGDA43t7SJgDXD_dgDsPT-fab0URoI8UI1Ipq-XN8BpboH4dlsTZmwzLlcgEIrrg7YVhfx2WcVIToqpQ_tR3KiEGPrrC1g_9pnHuBD4Jyie_cin0Tw-EBOm5klYs539ZBNRMvn5M9rlQAF9a4OIaNXD3uZJW7E_Loz-CDnHL6Y4R8Qzt4YwMfatPMO6e1o");
-            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
         }
 
         /* Timeline */
@@ -188,12 +187,6 @@
     <nav class="navbar navbar-expand-lg navbar-light sticky-top navbar-custom border-bottom">
         <div class="container-xl">
             <a class="navbar-brand d-flex align-items-center gap-3" href="#">
-                <div class="text-primary-custom">
-                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z"></path>
-                        <path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
-                    </svg>
-                </div>
                 <h2 class="mb-0 fs-5 fw-bold">Día de las Empresas del Bosque</h2>
             </a>
             
@@ -203,45 +196,45 @@
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto me-3">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#documents">Documents</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Sobre Día de las Empresas del Bosque</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#timeline">Todas las ediciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#documents">Documentos de interés</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#events">Galería</a></li>
                     <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                 </ul>
-                <button class="btn btn-primary-custom">Get Started</button>
+                <!-- <button class="btn btn-primary-custom">Get Started</button> -->
             </div>
         </div>
     </nav>
 
     <main>
         <!-- Hero Section -->
-        <section class="hero-section d-flex align-items-center justify-content-center text-center">
+        <section class="hero-section d-flex align-items-center justify-content-center text-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url('https://fastly.picsum.photos/id/28/4928/3264.jpg?hmac=GnYF-RnBUg44PFfU5pcw_Qs0ReOyStdnZ8MtQWJqTfA');">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
-                        <h1 class="display-3 fw-black text-white mb-4">Grow Your Future: The Frontier of Forestry Entrepreneurship</h1>
+                        <h1 class="display-3 fw-black text-white mb-4">Día de las Empresas del Bosque</h1>
                         <p class="lead text-white mb-4">Discover the potential of sustainable forestry and learn how to build a thriving business from the ground up.</p>
-                        <a href="#about" class="btn btn-primary-custom btn-lg">Learn More</a>
+                        <!-- <a href="#about" class="btn btn-primary-custom btn-lg">Learn More</a> -->
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- Sobre día de las empresas del bosque -->
         <section class="py-5" id="about">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <h2 class="display-5 fw-bold mb-4">What is Forestry Entrepreneurship?</h2>
-                        <p class="mb-3">Forestry entrepreneurship involves creating and managing businesses centered around forest resources and ecosystems. It's a dynamic field that balances economic opportunities with environmental stewardship, focusing on sustainable practices like selective harvesting, reforestation, and developing non-timber forest products. This approach not only generates income but also contributes to the health of our planet, ensuring forests remain for generations to come.</p>
-                        <p>It represents a shift from traditional logging to a holistic view of forests as valuable, renewable assets. Entrepreneurs in this space are innovators, finding new ways to utilize wood, cultivate specialty mushrooms, tap into agroforestry, or build eco-tourism ventures. By embracing sustainability, they create resilient businesses that benefit local communities, sequester carbon, and preserve biodiversity.</p>
+                        <h2 class="display-5 fw-bold mb-4">¿Qué es Día de las Empresas del Bosque?</h2>
+                        <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt est fuga sint dolore nisi cum eligendi officiis incidunt quisquam laboriosam, iure excepturi, explicabo quaerat voluptatem quo dolorem veritatis maxime nulla.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam unde modi repellendus iure consequuntur est perferendis pariatur quidem voluptates obcaecati, sapiente fuga itaque labore omnis praesentium doloremque repudiandae possimus nihil.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Timeline Section -->
+        <!-- Línea del tiempo -->
         <section class="py-5 bg-white" id="timeline">
             <div class="container">
                 <div class="text-center mb-5">
@@ -256,13 +249,13 @@
                         <div class="col-md-6 text-end pe-md-5">
                             <div class="card card-custom shadow-sm">
                                 <div class="card-body">
-                                    <h3 class="h5 fw-bold text-primary-custom">1. Planning & Research</h3>
-                                    <p class="small mb-0">Develop a business plan, research land acquisition, and understand market demands.</p>
+                                    <h3 class="h5 fw-bold text-primary-custom">2018</h3>
+                                    <p class="small mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores eveniet fugit adipisci corrupti sed.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="timeline-badge">
-                            <span>1</span>
+                            <span></span>
                         </div>
                         <div class="col-md-6"></div>
                     </div>
@@ -270,13 +263,13 @@
                     <div class="row mb-5 position-relative">
                         <div class="col-md-6"></div>
                         <div class="timeline-badge">
-                            <span>2</span>
+                            <span></span>
                         </div>
                         <div class="col-md-6 ps-md-5">
                             <div class="card card-custom shadow-sm">
                                 <div class="card-body">
-                                    <h3 class="h5 fw-bold text-primary-custom">2. Funding & Legal</h3>
-                                    <p class="small mb-0">Secure grants and funding. Navigate regulations and sustainability certifications.</p>
+                                    <h3 class="h5 fw-bold text-primary-custom">2019</h3>
+                                    <p class="small mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores eveniet fugit adipisci corrupti sed.</p>
                                 </div>
                             </div>
                         </div>
@@ -286,13 +279,13 @@
                         <div class="col-md-6 text-end pe-md-5">
                             <div class="card card-custom shadow-sm">
                                 <div class="card-body">
-                                    <h3 class="h5 fw-bold text-primary-custom">3. Implementation</h3>
-                                    <p class="small mb-0">Begin sustainable harvesting, planting, or developing non-timber products.</p>
+                                    <h3 class="h5 fw-bold text-primary-custom">2020</h3>
+                                    <p class="small mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores eveniet fugit adipisci corrupti sed.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="timeline-badge">
-                            <span>3</span>
+                            <span></span>
                         </div>
                         <div class="col-md-6"></div>
                     </div>
@@ -300,13 +293,13 @@
                     <div class="row position-relative">
                         <div class="col-md-6"></div>
                         <div class="timeline-badge">
-                            <span>4</span>
+                            <span></span>
                         </div>
                         <div class="col-md-6 ps-md-5">
                             <div class="card card-custom shadow-sm">
                                 <div class="card-body">
-                                    <h3 class="h5 fw-bold text-primary-custom">4. Market Entry</h3>
-                                    <p class="small mb-0">Process materials, build your brand, and connect with buyers and markets.</p>
+                                    <h3 class="h5 fw-bold text-primary-custom">2021</h3>
+                                    <p class="small mb-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores eveniet fugit adipisci corrupti sed.</p>
                                 </div>
                             </div>
                         </div>
@@ -315,63 +308,159 @@
             </div>
         </section>
 
-        <!-- Documents Section -->
-        <section class="py-5" id="documents">
+        <!-- Documentos de Interés  -->
+            <div class="container">
+                <div class="title-content">
+                    <h2 class="text-center display-5 fw-bold">Documentos de interés </h2>
+
+                    <div class="row row-cols-1 row-cols-md-2 justify-content-center">
+                        <div class="col">
+                            <p class="text-black-50 text-center">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Esse repudiandae doloremque temporibus quo dignissimos labore mollitia minima consectetur aperiam obcaecati?
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row row-cols-1 row-cols-lg-2 g-4 p-3 justify-content-center align-items-center">
+
+                    <!-- Documentos de Interés Carrusel -->
+                    <div class="col d-flex align-items-stretch">
+                        <div class="card w-100 h-100 bg-transparent border-0 shadow-sm p-2" >
+                            <div class="card-header bg-transparent border-0">
+                                <h6 class="">Materiales de interés</h6>
+                            </div>
+
+                            <div class="card-body border-0">
+                                <div id="carruselDocs" class="carousel slide carousel-fade">
+
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <div class="ratio ratio-16x9 border rounded shadow-sm iframe-documento">
+                                                <iframe src="src/docs/SEMÁFORO DE PIGMENTACIÓN.pdf" frameborder="0" allowfullscreen></iframe>
+                                            </div>
+
+                                            <div class="carousel-caption carrusel-docs-caption">
+                                                <div class="btn-content">
+                                                    <a href="#" class="btn btn-primary btn-primary-custom" style="font-size: .7rem!important;">Leer documento</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item">
+                                            <div class="ratio ratio-16x9 border rounded shadow-sm iframe-documento">
+                                                <iframe  src="src/docs/ESQUEMA DE USO GRADUAL PARA LÍNEA DE ACLARANTES BRAFER.pdf" frameborder="0" allowfullscreen></iframe>
+                                            </div>
+
+                                            <div class="carousel-caption carrusel-docs-caption">
+                                                <div class="btn-content">
+                                                    <a href="#" class="btn btn-primary-custom" style="font-size: .7rem!important;">Leer documento</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="carousel-item">
+                                            <div class="ratio ratio-16x9 border rounded shadow-sm iframe-documento">
+                                                <iframe src="src/docs/LISTADO MAESTRO PRODUCTOS BRAFER PÚBLICO.pdf" frameborder="0" allowfullscreen></iframe>
+                                            </div>
+
+                                            <div class="carousel-caption carrusel-docs-caption">
+                                                <div class="btn-content">
+                                                    <a href="#" class="btn primary-custom" style="font-size: .7rem!important;">Leer documento</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carruselDocs" data-bs-slide="prev">
+                                        <span class="item-carrusel">
+                                            <i class="bi bi-arrow-left-circle-fill"></i>
+                                        </span>
+                                    </button>
+
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carruselDocs" data-bs-slide="next">
+                                        <span class="item-carrusel">
+                                            <i class="bi bi-arrow-right-circle-fill"></i>
+                                        </span>
+                                    </button>
+
+                                </div>
+
+                                <div class="carousel-indicators carrusel-docs-indicators">
+                                    <button type="button" data-bs-target="#carruselDocs" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carruselDocs" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carruselDocs" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                            </div>
+
+                            <div class="card-footer border-0 bg-transparent">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Videos YT, capacitaciones -->
+                    <div class="col d-flex align-items-stretch" style="height: 609px;">
+                        <div class="row row-cols-1 gap-3">
+                            <!-- Videos YT -->
+                            <div class="col d-flex align-items-stretch">
+                                <div class="card w-100 h-100 bg-transparent border-0 shadow-sm p-2" >
+                                    <div class="card-header bg-transparent border-0">
+                                        <h6 class="">Videos</h6>
+                                    </div>
+
+                                    <div class="card-body border-0">
+                                        <p class="text-black-50">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                        </p>
+                                    </div>
+
+                                    <div class="card-footer border-0 bg-transparent">
+                                        <div class="btn-content">
+                                            <a href="#" class="btn btn-primary-custom">Saber más</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Capacitaciones -->
+                            <div class="col d-flex align-items-stretch">
+                                <div class="card w-100 h-100 bg-transparent border-0 shadow-sm p-2" >
+                                    <div class="card-header bg-transparent border-0">
+                                        <h6 class="">Capacitaciones</h6>
+                                    </div>
+
+                                    <div class="card-body border-0">
+                                        <p class="text-black-50">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                        </p>
+                                    </div>
+
+                                    <div class="card-footer border-0 bg-transparent">
+                                        <div class="btn-content">
+                                            <a href="#" class="btn btn-primary-custom">Saber más</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería -->
+        <section class="py-5 bg-white overflow-hidden" id="events">
             <div class="container">
                 <div class="text-center mb-5">
-                    <h2 class="display-5 fw-bold">Documents of Interest</h2>
-                    <p class="lead text-muted">Essential resources to guide your venture.</p>
-                </div>
-                
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card card-custom h-100 shadow-sm">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center gap-3 mb-3">
-                                    <span class="material-symbols-outlined text-primary-custom" style="font-size: 2.5rem;">description</span>
-                                    <h3 class="h5 fw-bold mb-0">Business Plan Templates</h3>
-                                </div>
-                                <p class="small">Structured templates to help you build a solid business case for your forestry project.</p>
-                            </div>
-                            <a href="#" class="btn btn-link text-primary-custom fw-bold">Download Now</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card card-custom h-100 shadow-sm">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center gap-3 mb-3">
-                                    <span class="material-symbols-outlined text-primary-custom" style="font-size: 2.5rem;">account_balance</span>
-                                    <h3 class="h5 fw-bold mb-0">Grant Applications</h3>
-                                </div>
-                                <p class="small">A collection of links to federal and state grants available for sustainable forestry.</p>
-                            </div>
-                            <a href="#" class="btn btn-link text-primary-custom fw-bold">Explore Grants</a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card card-custom h-100 shadow-sm">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center gap-3 mb-3">
-                                    <span class="material-symbols-outlined text-primary-custom" style="font-size: 2.5rem;">verified</span>
-                                    <h3 class="h5 fw-bold mb-0">Sustainability Guidelines</h3>
-                                </div>
-                                <p class="small">Best practices and guidelines for ensuring your operations are environmentally responsible.</p>
-                            </div>
-                            <a href="#" class="btn btn-link text-primary-custom fw-bold">Read Guidelines</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Events Section -->
-        <section class="py-5 bg-white overflow-hidden" id="events">
-            <div class="container-fluid">
-                <div class="text-center mb-5">
-                    <h2 class="display-5 fw-bold">Past & Upcoming Events</h2>
-                    <p class="lead text-muted">Connect with the community at our workshops and conferences.</p>
+                    <h2 class="display-5 fw-bold">Galería</h2>
+                    <p class="lead text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores eveniet fugit adipisci corrupti sed.</p>
                 </div>
                 
                 <div class="marquee-container">
@@ -379,32 +468,32 @@
                         <!-- Event Card 1 -->
                         <div class="card card-custom shadow-sm mx-3" style="min-width: 320px;">
                             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5ev3_1P3lymNiVJ9jXwpZ8CJjT3lxhlbO79Dj0eluHhUauJjCzgFezU8jGeyAsi1tP5r33dY5VqUAJfJs26aCTxNDKCA_9dWPgtEygeIRePBo6we_W87onXluzbwkh75TXMeGFv2AGowYj4xX2GRM4AKQldErXRTOnnu1KSZ2w7x3tgvTmlyJEjkdNjcaqGSVSA1WOwU1oc2VHsz7tBYSL5AWr2FYLnXQcACLU_lhTaKiIy7SPGv8o7_o-nCDmXj2fvoMpHULuiE" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Workshop">
-                            <div class="card-body">
-                                <p class="small fw-medium text-primary-custom mb-2">PAST EVENT - June 2024</p>
-                                <h3 class="h5 fw-bold">Sustainable Harvesting Workshop</h3>
-                                <p class="small mb-0">A hands-on workshop covering selective logging techniques and forest regeneration.</p>
-                            </div>
+
                         </div>
 
                         <!-- Event Card 2 -->
                         <div class="card card-custom shadow-sm mx-3" style="min-width: 320px;">
                             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXpMD5OEORSZo4zwHuuQNGBiy_8-N3kmVSiSjIrxu8vXc3AX1JqT8HzGMGH3bnJh84IBxknn1F101-jJB_O8WBFgwjr7Vwt4CAeuHeqME6a51B6342bS5M3NsP6xGs73LuKzGzgE1fqIm-0ks5XP5HTXemfQTHzHk6sQMz3qy0VKVUFqlrGV1ny-m-uKt1ifheu_1ACWSA0DP3xLNOxFau3-_MQcu3UP6a2GNjPhQ33T0LCB-7iwb-3ocKAqz16kRBDYLV8kC264M" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Conference">
-                            <div class="card-body">
-                                <p class="small fw-medium text-primary-custom mb-2">PAST EVENT - March 2024</p>
-                                <h3 class="h5 fw-bold">Forestry Futures Conference</h3>
-                                <p class="small mb-0">Our annual conference bringing together experts in forestry, business, and technology.</p>
-                            </div>
                         </div>
 
                         <div class="card card-custom shadow-sm mx-3 border-primary-custom ring-primary" style="min-width: 320px;">
                             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2mScVIcuqc8uYk6F8sC_s4pOFEmrJgxDBmlPXkS8XMCIrbvhT4K2rwZUC94ZuhzGHnx7cI8wMoZYuhk77eGLGBWdlMbjjyZGCtMHuZrDMWlDUD1lnCePgM2aebIoNGWFK66KF1PeU8l5M9q4-4Kb3fjvNF8xgNS5qvq4OhlOB82CLSIKSoNPGf-lSMduwyAHQ5XDO00E7K9mQhm0uQJJMfZ4fRhO_LgvHO9Oml1xKEIYNxmgRXwjSCi9HlDgkxA1AloDDz5AFPjM" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Networking">
-                            <div class="card-body">
-                                <p class="small fw-bold text-primary-custom mb-2">UPCOMING - October 15, 2024</p>
-                                <h3 class="h5 fw-bold">Innovators Networking Meetup</h3>
-                                <p class="small mb-3">An informal event to connect with peers, investors, and mentors in the field.</p>
-                                <a href="#" class="btn btn-primary-custom btn-sm">Register Now</a>
-                            </div>
                         </div>
+
+                        <!-- Event Card 1 -->
+                        <div class="card card-custom shadow-sm mx-3" style="min-width: 320px;">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5ev3_1P3lymNiVJ9jXwpZ8CJjT3lxhlbO79Dj0eluHhUauJjCzgFezU8jGeyAsi1tP5r33dY5VqUAJfJs26aCTxNDKCA_9dWPgtEygeIRePBo6we_W87onXluzbwkh75TXMeGFv2AGowYj4xX2GRM4AKQldErXRTOnnu1KSZ2w7x3tgvTmlyJEjkdNjcaqGSVSA1WOwU1oc2VHsz7tBYSL5AWr2FYLnXQcACLU_lhTaKiIy7SPGv8o7_o-nCDmXj2fvoMpHULuiE" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Workshop">
+
+                        </div>
+
+                        <!-- Event Card 2 -->
+                        <div class="card card-custom shadow-sm mx-3" style="min-width: 320px;">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXpMD5OEORSZo4zwHuuQNGBiy_8-N3kmVSiSjIrxu8vXc3AX1JqT8HzGMGH3bnJh84IBxknn1F101-jJB_O8WBFgwjr7Vwt4CAeuHeqME6a51B6342bS5M3NsP6xGs73LuKzGzgE1fqIm-0ks5XP5HTXemfQTHzHk6sQMz3qy0VKVUFqlrGV1ny-m-uKt1ifheu_1ACWSA0DP3xLNOxFau3-_MQcu3UP6a2GNjPhQ33T0LCB-7iwb-3ocKAqz16kRBDYLV8kC264M" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Conference">
+                        </div>
+
+                        <div class="card card-custom shadow-sm mx-3 border-primary-custom ring-primary" style="min-width: 320px;">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2mScVIcuqc8uYk6F8sC_s4pOFEmrJgxDBmlPXkS8XMCIrbvhT4K2rwZUC94ZuhzGHnx7cI8wMoZYuhk77eGLGBWdlMbjjyZGCtMHuZrDMWlDUD1lnCePgM2aebIoNGWFK66KF1PeU8l5M9q4-4Kb3fjvNF8xgNS5qvq4OhlOB82CLSIKSoNPGf-lSMduwyAHQ5XDO00E7K9mQhm0uQJJMfZ4fRhO_LgvHO9Oml1xKEIYNxmgRXwjSCi9HlDgkxA1AloDDz5AFPjM" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Networking">
+                        </div>                        
                     </div>
                 </div>
             </div>
@@ -414,8 +503,8 @@
         <section class="py-5" id="faq">
             <div class="container">
                 <div class="text-center mb-5">
-                    <h2 class="display-5 fw-bold">Frequently Asked Questions</h2>
-                    <p class="lead text-muted">Your common inquiries, answered.</p>
+                    <h2 class="display-5 fw-bold">Preguntas frecuentes</h2>
+                    <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae est quaerat praesentium vel repellendus molestiae? Aliquam.</p>
                 </div>
                 
                 <div class="row justify-content-center">
@@ -426,7 +515,7 @@
                                 <span class="material-symbols-outlined">expand_more</span>
                             </summary>
                             <div class="card-body pt-0">
-                                <p class="mb-0">Initial costs can vary widely based on land acquisition, equipment, and the scale of your operation. A detailed business plan is crucial for estimating your specific needs. Many entrepreneurs start by leasing land or partnering with existing landowners to reduce upfront capital expenditure.</p>
+                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit dicta ipsam itaque consectetur adipisci eligendi quo nemo animi deserunt voluptate qui, id accusantium fugiat eaque rerum sed odio tenetur. Ipsa?</p>
                             </div>
                         </details>
 
@@ -436,7 +525,7 @@
                                 <span class="material-symbols-outlined">expand_more</span>
                             </summary>
                             <div class="card-body pt-0">
-                                <p class="mb-0">Regulations depend on your location and business type. Key areas include environmental protection laws, harvesting permits, land use zoning, and business licensing. We recommend consulting with local forestry commissions and legal experts to ensure full compliance.</p>
+                                <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quae esse optio quibusdam sapiente molestias suscipit deleniti assumenda! Corrupti quibusdam ratione laborum distinctio ipsam veniam pariatur neque soluta placeat nam!</p>
                             </div>
                         </details>
 
@@ -446,7 +535,7 @@
                                 <span class="material-symbols-outlined">expand_more</span>
                             </summary>
                             <div class="card-body pt-0">
-                                <p class="mb-0">Sustainability is at the core of modern forestry. Key practices include developing a long-term forest management plan, using selective harvesting methods, promoting biodiversity, and pursuing certifications from organizations like the Forest Stewardship Council (FSC) or the Sustainable Forestry Initiative (SFI).</p>
+                                <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse autem earum rem! Quae necessitatibus explicabo, aliquam nobis officia aut rem, voluptas velit, molestias minima harum modi expedita architecto esse! Architecto?</p>
                             </div>
                         </details>
 
@@ -456,7 +545,7 @@
                                 <span class="material-symbols-outlined">expand_more</span>
                             </summary>
                             <div class="card-body pt-0">
-                                <p class="mb-0">Non-timber forest products (NTFPs) are goods other than timber that are harvested from forests. Examples include medicinal plants, gourmet mushrooms, maple syrup, resins, and materials for crafts. Developing NTFPs can be a great way to diversify your income streams and add value to your forest land.</p>
+                                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde quas a veniam in ducimus vitae minima! Beatae nobis, perspiciatis laborum dolore excepturi inventore molestias impedit possimus. Impedit officiis fugiat soluta?</p>
                             </div>
                         </details>
                     </div>
@@ -501,7 +590,7 @@
             const navbar = document.querySelector('.navbar-custom');
             
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
+                if (window.scrollY === 50) {
                     navbar.classList.add('scrolled');
                 } else {
                     navbar.classList.remove('scrolled');
@@ -511,3 +600,10 @@
     </script>
 </body>
 </html>
+
+<span class="material-symbols-outlined text-primary-custom" style="font-size: 2.5rem;">description</span>
+
+<span class="material-symbols-outlined text-primary-custom" style="font-size: 2.5rem;">account_balance</span>
+
+
+<span class="material-symbols-outlined text-primary-custom" style="font-size: 2.5rem;">verified</span>
