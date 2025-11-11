@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congreso Forestal Juvenil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2e7fb1;
+            --secondary: #8cc029;
+            --primary-dark: #1e5a7f;
+            --secondary-dark: #6a9620;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            transition: all 0.3s;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white !important;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+            font-weight: 500;
+            transition: all 0.3s;
+            margin: 0 0.5rem;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary) !important;
+            transform: translateY(-2px);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary-custom {
+            background: var(--secondary);
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s;
+            color: white;
+        }
+
+        .btn-primary-custom:hover {
+            background: var(--secondary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(140, 192, 41, 0.3);
+        }
+
+        .btn-outline-custom {
+            border: 2px solid white;
+            color: white;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s;
+            background: transparent;
+        }
+
+        .btn-outline-custom:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            height: 100%;
+            border-top: 4px solid var(--secondary);
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .info-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--secondary);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+            text-align: left;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 45%;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background: var(--secondary);
+            border: 5px solid white;
+            border-radius: 50%;
+            top: 2rem;
+            box-shadow: 0 0 0 4px var(--secondary);
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-marker {
+                left: 20px;
+            }
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        .document-card {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: block;
+            height: 100%;
+        }
+
+        .document-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(46, 127, 177, 0.3);
+            color: white;
+        }
+
+        .document-card i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            height: 300px;
+        }
+
+        .nav-item-gallery .nav-link {
+            color: var(--primary)!important;
+        }
+
+        .nav-item-gallery .nav-link.active {
+            color: #fff!important;
+        }
+
+        .nav-item-gallery .nav-link:hover {
+            color: var(--secondary)!important;
+        }
+
+        .nav-item-gallery .nav-link:focus {
+            color: #fff!important;
+        }
+
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(46, 127, 177, 0.9), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            color: white;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, rgba(46, 127, 177, 0.05), transparent);
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(to right, rgba(46, 127, 177, 0.1), transparent);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-icon.active {
+            transform: rotate(180deg);
+        }
+
+        .hidden-faqs {
+            display: none;
+        }
+
+        .btn-show-more {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-show-more:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--secondary);
+        }
+
+        .bg-light-custom {
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-tree me-2"></i>Joven Emprendedor Forestal
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#info">Información</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#proyecto">Proyecto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#timeline">Ediciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#documentos">Documentos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="hero-section">
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1 class="hero-title">Joven Emprendedor Forestal </h1>
+                    <p class="hero-subtitle">Unidos por los bosques, construyendo un futuro sostenible para México</p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <button class="btn btn-primary-custom">Únete Ahora</button>
+                        <button class="btn btn-outline-custom">Conoce Más</button>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-4">
+                            <h3 class="text-white fw-bold">10+</h3>
+                            <p class="text-white-50">Ediciones</p>
+                        </div>
+                        <div class="col-4">
+                            <h3 class="text-white fw-bold">5000+</h3>
+                            <p class="text-white-50">Participantes</p>
+                        </div>
+                        <div class="col-4">
+                            <h3 class="text-white fw-bold">100%</h3>
+                            <p class="text-white-50">Compromiso</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="info" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">¿Qué es Joven Emprendedor Forestal?</h2>
+                <p class="text-muted mt-4">Descubre los beneficios de formar parte del Congreso Forestal más grande de México</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="info-card text-center">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4 class="fw-bold">Aprendizaje</h4>
+                        <p class="text-muted">Talleres, conferencias y capacitaciones con expertos del sector forestal</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-card text-center">
+                        <i class="fas fa-users"></i>
+                        <h4 class="fw-bold">Networking</h4>
+                        <p class="text-muted">Conecta con jóvenes de todo el país apasionados por los bosques</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-card text-center">
+                        <i class="fas fa-lightbulb"></i>
+                        <h4 class="fw-bold">Innovación</h4>
+                        <p class="text-muted">Conoce las últimas tendencias en tecnología y gestión forestal sostenible</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyecto" class="py-5 bg-light-custom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">Sobre el Proyecto</h2>
+                    <p class="lead mt-4">El Congreso Forestal Juvenil nace de la necesidad de involucrar a las nuevas generaciones en la conservación y manejo sostenible de nuestros bosques.</p>
+                    <p class="text-muted">Desde nuestra primera edición, hemos logrado crear una comunidad vibrante de jóvenes comprometidos con el futuro de los recursos forestales de México.</p>
+                    <div class="mt-4">
+                        <h5 class="fw-bold" style="color: var(--primary)">Nuestros Objetivos:</h5>
+                        <ul class="text-muted">
+                            <li>Promover la educación ambiental y forestal entre jóvenes</li>
+                            <li>Fomentar el intercambio de conocimientos y experiencias</li>
+                            <li>Crear redes de colaboración entre instituciones educativas</li>
+                            <li>Impulsar proyectos de investigación y desarrollo sostenible</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=400&fit=crop" alt="Proyecto" class="img-fluid rounded shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Ediciones Anteriores</h2>
+                <p class="text-muted mt-4">Un recorrido por la historia del Congreso Forestal Juvenil</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024 - X Edición</div>
+                        <h5 class="fw-bold">Innovación y Tecnología Forestal</h5>
+                        <p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>Guadalajara, Jalisco</p>
+                        <p class="text-muted mb-2"><i class="fas fa-users me-2"></i>800 participantes</p>
+                        <p>Enfoque en drones, inteligencia artificial y herramientas digitales para el monitoreo forestal.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023 - IX Edición</div>
+                        <h5 class="fw-bold">Bosques Resilientes al Cambio Climático</h5>
+                        <p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>Oaxaca, Oaxaca</p>
+                        <p class="text-muted mb-2"><i class="fas fa-users me-2"></i>650 participantes</p>
+                        <p>Estrategias de adaptación y mitigación frente al cambio climático en ecosistemas forestales.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2022 - VIII Edición</div>
+                        <h5 class="fw-bold">Gobernanza y Participación Comunitaria</h5>
+                        <p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>Chiapas</p>
+                        <p class="text-muted mb-2"><i class="fas fa-users me-2"></i>550 participantes</p>
+                        <p>Fortalecimiento del manejo forestal comunitario y derechos de pueblos indígenas.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021 - VII Edición</div>
+                        <h5 class="fw-bold">Restauración de Ecosistemas</h5>
+                        <p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>Virtual</p>
+                        <p class="text-muted mb-2"><i class="fas fa-users me-2"></i>1200 participantes</p>
+                        <p>Edición virtual enfocada en técnicas de reforestación y recuperación de suelos degradados.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2019 - VI Edición</div>
+                        <h5 class="fw-bold">Economía Circular en el Sector Forestal</h5>
+                        <p class="text-muted mb-2"><i class="fas fa-map-marker-alt me-2"></i>Querétaro</p>
+                        <p class="text-muted mb-2"><i class="fas fa-users me-2"></i>500 participantes</p>
+                        <p>Aprovechamiento integral de productos forestales y cadenas de valor sostenibles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="documentos" class="py-5 bg-light-custom">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Documentos de Interés</h2>
+                <p class="text-muted mt-4">Accede a memorias, presentaciones y material relevante</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <a href="#" class="document-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h5 class="fw-bold">Memorias 2024</h5>
+                        <p>Compilación de ponencias y resultados de la última edición</p>
+                        <small><i class="fas fa-download me-2"></i>Descargar PDF</small>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="document-card">
+                        <i class="fas fa-book"></i>
+                        <h5 class="fw-bold">Guía del Participante</h5>
+                        <p>Todo lo que necesitas saber para aprovechar el congreso</p>
+                        <small><i class="fas fa-download me-2"></i>Descargar PDF</small>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="document-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h5 class="fw-bold">Informe de Impacto</h5>
+                        <p>Resultados y estadísticas de 10 años del congreso</p>
+                        <small><i class="fas fa-download me-2"></i>Descargar PDF</small>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="document-card">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h5 class="fw-bold">Convocatoria 2025</h5>
+                        <p>Bases y requisitos para participar en la próxima edición</p>
+                        <small><i class="fas fa-download me-2"></i>Descargar PDF</small>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="document-card">
+                        <i class="fas fa-certificate"></i>
+                        <h5 class="fw-bold">Certificaciones</h5>
+                        <p>Información sobre constancias y reconocimientos</p>
+                        <small><i class="fas fa-download me-2"></i>Descargar PDF</small>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="document-card">
+                        <i class="fas fa-handshake"></i>
+                        <h5 class="fw-bold">Manual de Patrocinadores</h5>
+                        <p>Oportunidades de colaboración y apoyo al evento</p>
+                        <small><i class="fas fa-download me-2"></i>Descargar PDF</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Galería de Ediciones</h2>
+                <p class="text-muted mt-4">Momentos memorables de cada año</p>
+            </div>
+            
+            <ul class="nav nav-pills justify-content-center mb-4">
+                <li class="nav-item nav-item-gallery">
+                    <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#gallery2024">2024</button>
+                </li>
+                <li class="nav-item nav-item-gallery">
+                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#gallery2023">2023</button>
+                </li>
+                <li class="nav-item nav-item-gallery">
+                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#gallery2022">2022</button>
+                </li>
+                <li class="nav-item nav-item-gallery">
+                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#gallery2021">2021</button>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="gallery2024">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=300&fit=crop" alt="Conferencia">
+                                <div class="gallery-overlay">
+                                    <h5>Conferencia Magistral - Guadalajara</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=300&fit=crop" alt="Taller">
+                                <div class="gallery-overlay">
+                                    <h5>Taller de Drones Forestales</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop" alt="Campo">
+                                <div class="gallery-overlay">
+                                    <h5>Visita de Campo</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="gallery2023">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=300&fit=crop" alt="Oaxaca">
+                                <div class="gallery-overlay">
+                                    <h5>Inauguración Oaxaca 2023</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" alt="Panel">
+                                <div class="gallery-overlay">
+                                    <h5>Panel de Expertos</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=400&h=300&fit=crop" alt="Reforestación">
+                                <div class="gallery-overlay">
+                                    <h5>Reforestación Comunitaria</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="gallery2022">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=400&h=300&fit=crop" alt="Chiapas">
+                                <div class="gallery-overlay">
+                                    <h5>Chiapas 2022 - Apertura</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?w=400&h=300&fit=crop" alt="Comunidad">
+                                <div class="gallery-overlay">
+                                    <h5>Encuentro con Comunidades</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop" alt="Gobernanza">
+                                <div class="gallery-overlay">
+                                    <h5>Taller de Gobernanza</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="gallery2021">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=400&h=300&fit=crop" alt="Virtual">
+                                <div class="gallery-overlay">
+                                    <h5>Edición Virtual 2021</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1593642532400-2682810df593?w=400&h=300&fit=crop" alt="Webinar">
+                                <div class="gallery-overlay">
+                                    <h5>Webinar Restauración</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=300&fit=crop" alt="Certificación">
+                                <div class="gallery-overlay">
+                                    <h5>Certificación Participantes</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-5 bg-light-custom">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+                <p class="text-muted mt-4">Resolvemos tus dudas sobre el congreso</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div id="faqContainer">
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>¿Cuándo y dónde será la próxima edición?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                La próxima edición será en marzo de 2025 en Monterrey, Nuevo León. Las fechas exactas se anunciarán en enero.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>¿Quiénes pueden participar?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                Pueden participar estudiantes de nivel medio superior y superior, así como jóvenes profesionales menores de 30 años interesados en el sector forestal.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>¿Tiene algún costo?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                El congreso tiene una cuota de recuperación simbólica que incluye materiales, certificado, coffee breaks y acceso a todas las actividades. Hay becas disponibles.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>¿Qué incluye la inscripción?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                La inscripción incluye acceso a todas las conferencias, talleres, material didáctico, coffee breaks, comida, kit de participante y certificado de asistencia.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>¿Necesito experiencia previa en temas forestales?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                No es necesario. El congreso está diseñado para todos los niveles de conocimiento, desde principiantes hasta expertos.
+                            </div>
+                        </div>
+
+                        <div class="hidden-faqs">
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>¿Puedo presentar un trabajo de investigación?</span>
+                                    <i class="fas fa-chevron-down faq-icon"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    Sí, tenemos una convocatoria para presentación de trabajos en formato póster y oral. Los detalles se publican 3 meses antes del evento.
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>¿Hay hospedaje disponible?</span>
+                                    <i class="fas fa-chevron-down faq-icon"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    Trabajamos con hoteles asociados que ofrecen tarifas especiales para participantes. La información se comparte en la guía del participante.
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>¿Cómo puedo ser voluntario del evento?</span>
+                                    <i class="fas fa-chevron-down faq-icon"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    Publicamos una convocatoria para voluntarios 2 meses antes del evento. Los voluntarios reciben entrada gratuita y certificado especial.
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>¿Entregan constancias?</span>
+                                    <i class="fas fa-chevron-down faq-icon"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    Sí, se entregan constancias digitales con valor curricular avaladas por las instituciones organizadoras para quienes asistan al 80% de las actividades.
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>¿Habrá actividades de campo?</span>
+                                    <i class="fas fa-chevron-down faq-icon"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    Sí, incluimos visitas técnicas a áreas forestales cercanas donde se aplican prácticas de manejo sostenible. Cupo limitado con inscripción previa.
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>¿Qué medidas de seguridad implementan?</span>
+                                    <i class="fas fa-chevron-down faq-icon"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    Contamos con protocolos de seguridad actualizados, personal de apoyo y seguros para todos los participantes durante el evento.
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>¿Cómo puedo mantenerme informado?</span>
+                                    <i class="fas fa-chevron-down faq-icon"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    Síguenos en nuestras redes sociales y suscríbete a nuestro boletín para recibir todas las actualizaciones, convocatorias y noticias del congreso.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button class="btn btn-show-more" onclick="showMoreFAQs()">
+                            <span id="btnText">Ver más preguntas</span>
+                            <i class="fas fa-chevron-down ms-2" id="btnIcon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-tree me-2"></i>Congreso Forestal</h5>
+                    <p>Formando a la próxima generación de líderes forestales de México.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#info">Información</a></li>
+                        <li><a href="#proyecto">Sobre Nosotros</a></li>
+                        <li><a href="#documentos">Documentos</a></li>
+                        <li><a href="#faq">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Síguenos</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-4"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.2)">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Congreso Forestal Juvenil. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.faq-icon');
+            
+            answer.classList.toggle('active');
+            icon.classList.toggle('active');
+        }
+
+        let faqsExpanded = false;
+
+        function showMoreFAQs() {
+            const hiddenFAQs = document.querySelector('.hidden-faqs');
+            const btnText = document.getElementById('btnText');
+            const btnIcon = document.getElementById('btnIcon');
+            
+            if (!faqsExpanded) {
+                hiddenFAQs.style.display = 'block';
+                btnText.textContent = 'Ver menos preguntas';
+                btnIcon.classList.remove('fa-chevron-down');
+                btnIcon.classList.add('fa-chevron-up');
+                faqsExpanded = true;
+            } else {
+                hiddenFAQs.style.display = 'none';
+                btnText.textContent = 'Ver más preguntas';
+                btnIcon.classList.remove('fa-chevron-up');
+                btnIcon.classList.add('fa-chevron-down');
+                faqsExpanded = false;
+            }
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
