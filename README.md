@@ -12,4 +12,4 @@ Tecnológias usadas:
 3. Javascript
 
 IMPORTANTE !
-Estos sitios aún son prototipos por lo que tendrán cambios en diseño mismos que se verán reflejados en este repositorio. 
+Estos sitios aún son prototipos por lo que tendrán cambios en diseño ,mismos que se verán reflejados en este repositorio. 
